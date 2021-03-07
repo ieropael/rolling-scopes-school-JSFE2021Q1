@@ -92,3 +92,42 @@
   outline: none;
   cursor: pointer;
 }
+
+.survival {
+  padding-top: 280px;
+  padding-bottom: 240px;
+  width: 100%;
+  background-color: #02160b;
+  background-image: url("assets/images/survival.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #F7F7F7;
+}
+
+.survival__title {
+  margin-bottom: 50px;
+  font-size: 48px;
+  line-height: 72px;
+  letter-spacing: 2px;
+  color: #CD6326;
+}
+
+.survival__content {
+  margin-bottom: 50px;
+  width: 274px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.survival__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 60px;
+  font-size: 23px;
+  line-height: 27px;
+  background: #CD6326;
+  border-radius: 5px;
+  cursor: pointer;
+}
