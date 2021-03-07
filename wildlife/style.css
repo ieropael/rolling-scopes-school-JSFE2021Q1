@@ -11,3 +11,84 @@
   font-weight: 400;
   src: url('assets/fonts/Roboto-Regular.ttf');
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.header {
+  position: absolute;
+  padding-top: 20px;
+  width: 100%;
+  background-color: #02160b;
+  background-image: url("assets/images/survival.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #f7f7f7;
+  font-size: 23px;
+  line-height: 60px;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.logo__title {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 32px;
+  line-height: 60px;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  list-style-type: none;
+}
+
+.menu-link {
+  color: #f7f7f7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.search-button {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.sign-in-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 50px;
+  font-size: 23px;
+  line-height: 27px;
+  color: #f7f7f7;
+  background-color: rgba(0,0,0,0);
+  border: 2px solid #CD6326;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
