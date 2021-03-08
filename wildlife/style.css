@@ -30,8 +30,6 @@
   width: 100%;
   background-color: #02160b;
   background-image: url("assets/images/survival.png");
-  background-size: cover;
-  background-repeat: no-repeat;
   color: #f7f7f7;
   font-size: 23px;
   line-height: 60px;
@@ -94,12 +92,11 @@
 }
 
 .survival {
-  padding-top: 280px;
+  padding-top: 200px;
   padding-bottom: 240px;
   width: 100%;
   background-color: #02160b;
   background-image: url("assets/images/survival.png");
-  background-size: cover;
   background-repeat: no-repeat;
   color: #F7F7F7;
 }
@@ -130,4 +127,31 @@
   background: #CD6326;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.latest-articles {
+  background-color: #cccccc;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.latest-articles__title {
+  font-size: 48px;
+  line-height: 72px;
+  color: #333;
+  text-align: center;
+}
+
+.latest-articles__subtitle {
+  margin-top: 20px;
+  margin-bottom: 120px;
+  font-size: 24px;
+  line-height: 36px;
+  color: #666;
+  text-align: center;
+}
+
+.latest-articles__content {
+  display: flex;
+  justify-content: space-between;
 }
