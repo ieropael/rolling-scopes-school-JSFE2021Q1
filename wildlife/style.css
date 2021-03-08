@@ -51,6 +51,7 @@
   font-family: Roboto, Arial, sans-serif;
   font-size: 32px;
   line-height: 60px;
+  color: #fff;
   text-transform: uppercase;
 }
 
@@ -154,4 +155,59 @@
 .latest-articles__content {
   display: flex;
   justify-content: space-between;
+}
+
+.get-notified {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 240px;
+  background-color: #ccc;
+}
+
+.get-notified__subtitle {
+  margin-bottom: 60px;
+  font-size: 27px;
+  line-height: 40px;
+  color: #333;
+  text-align: center;
+}
+
+.get-notified__form {
+  display: flex;
+}
+
+.get-notified__email {
+  width: 540px;
+  height: 60px;
+  padding-left: 15px;
+  border-top: 1px solid #666;
+  border-right: none;
+  border-bottom: 1px solid #666;
+  border-left: 1px solid #666;
+  border-radius: 2px;
+  font-size: 23px;
+  line-height: 27px;
+  color: #666;
+}
+
+.get-notified__email::placeholder {
+  font-size: 23px;
+  line-height: 27px;
+  color: #666;
+}
+
+.get-notified__send {
+  width: 120px;
+  height: 60px;
+  font-size: 23px;
+  line-height: 27px;
+  color: #fff;
+  background-color: #CD6326;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline: none;
+  cursor: pointer;
 }
