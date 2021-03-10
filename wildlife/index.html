@@ -11,22 +11,16 @@
   <header class="header">
     <div class="container">
       <div class="header__content">
-        <div class="logo">
-          <img class="logo__image" src="assets/images/logo.svg" alt="Logo">
+        <a class="logo" href="#">
+          <span class="logo__image"></span>
           <span class="logo__title">Wildlife</span>
-        </div>
-        <nav class="navigation">
+        </a>
+        <nav class="header__navigation">
           <ul class="menu">
-            <li class="menu-item"><a href="#" class="menu-link">Blog</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Contacts</a></li>
-            <li class="menu-item">
-              <button type="button" class="search-button">
-                <img class="search-image" src="assets/images/search.svg" alt="Search">
-              </button>
-            </li>
-            <li class="menu-item">
-              <button type="button" class="sign-in-button">Sign in</button>
-            </li>
+            <li class="menu__item"><a class="menu__link menu__link-blog" href="#">Blog</a></li>
+            <li class="menu__item"><a class="menu__link menu__link-contacts" href="#">Contacts</a></li>
+            <li class="menu__item"><a class="menu__search" href="#"></a></li>
+            <li class="menu__item"><a class="menu__sign-in" href="#">Sign in</a></li>
           </ul>
         </nav>
       </div>
@@ -38,47 +32,71 @@
       <p class="survival__content">
         What this means is that we exist to help protect our environment and do in numbers of ways. You can save the planet by donation.
       </p>
-      <div class="survival__button">Donate</div>
+      <button class="donate-button" type="button">Donate</button>
     </div>
   </section>
-  <section class="latest-articles">
+  <section class="articles">
     <div class="container">
-      <h2 class="latest-articles__title">Latest articles</h2>
-      <h3 class="latest-articles__subtitle">Breaking news from the wild</h3>
-      <div class="latest-articles__content">
-        <img src="assets/images/arrow-left.svg" alt="Left" class="latest-articles__arrow">
-        <img src="assets/images/deer-picture.jpg" alt="Right" class="latest-articles__picture">
-        <img src="assets/images/squirrel-picture.jpg" alt="Deer" class="latest-articles__picture">
-        <img src="assets/images/bird-picture.jpg" alt="Squirrel" class="latest-articles__picture">
-        <img src="assets/images/arrow-right.svg" alt="Bird" class="latest-articles__arrow">
+      <h2 class="articles__title">Latest articles</h2>
+      <h3 class="articles__subtitle">Breaking news from the wild</h3>
+      <div class="articles__content">
+        <div class="arrow-left"></div>
+        <div class="articles__items">
+          <div class="articles__item">
+            <img src="assets/images/deer-picture.jpg" alt="Right" class="articles__picture">
+            <span class="articles__item-title">Deer</span>
+            <span class="articles__item-subtitle">Naturalist investigation</span>
+          </div>
+          <div class="articles__item">
+            <img src="assets/images/squirrel-picture.jpg" alt="Deer" class="articles__picture">
+            <span class="articles__item-title">Squirrel</span>
+            <span class="articles__item-subtitle">Kamikaze squirrels</span>
+          </div>
+          <div class="articles__item">
+            <img src="assets/images/bird-picture.jpg" alt="Squirrel" class="articles__picture">
+            <span class="articles__item-title">Bird</span>
+            <span class="articles__item-subtitle">Birds Fight club</span>
+          </div>
+        </div>
+        <div class="arrow-right"></div>
       </div>
     </div>
   </section>
-  <section class="get-notified">
-    <h3 class="get-notified__subtitle">Get notified about new amazing articles</h3>
-    <form class="get-notified__form">
-      <input class="get-notified__email" type="email" placeholder="Email">
-      <input class="get-notified__send" type="submit" value="Send">
+  <section class="notify">
+    <h3 class="notify__title">Get notified about new amazing articles</h3>
+    <form class="notify__form">
+      <input class="notify__email" type="text" placeholder="Email">
+      <input class="notify__send" type="submit" value="Send">
     </form>
   </section>
   <footer class="footer">
     <div class="container">
       <div class="footer__content">
-        <div class="logo">
-          <img class="logo__image" src="assets/images/logo.svg" alt="Logo">
+        <a class="logo" href="#">
+          <span class="logo__image"></span>
           <span class="logo__title">Wildlife</span>
-        </div>
-        <div class="footer__links">
-          <span class="footer__link">Articles</span>
-          <span class="footer__link">About us</span>
-          <span class="footer__link">Learn more</span>
-        </div>
-        <div class="footer__socials">
-          <img class="footer__social" src="assets/images/facebook.svg" alt="Facebook">
-          <img class="footer__social" src="assets/images/instagram.svg" alt="Instagram">
-          <img class="footer__social" src="assets/images/pinterest.svg" alt="Pinterest">
-          <img class="footer__social" src="assets/images/telegram.svg" alt="Telegram">
-        </div>
+        </a>
+        <nav class="footer__navigation">
+          <ul class="menu">
+            <li class="menu__item"><a class="menu__link menu__link-articles" href="#">Articles</a></li>
+            <li class="menu__item"><a class="menu__link menu__link-about-us" href="#">About&nbspus</a></li>
+            <li class="menu__item"><a class="menu__link menu__link-learn-more" href="#">Learn&nbspmore</a></li>
+          </ul>
+        </nav>
+        <ul class="footer__socials">
+          <li class="footer__social">
+            <a class="footer__social-facebook" href="#"></a>
+          </li>
+          <li class="footer__social">
+            <a class="footer__social-instagram" href="#"></a>
+          </li>
+          <li class="footer__social">
+            <a class="footer__social-pinterest" href="#"></a>
+          </li>
+          <li class="footer__social">
+            <a class="footer__social-telegram" href="#"></a>
+          </li>
+        </ul>
       </div>
     </div>
   </footer>
