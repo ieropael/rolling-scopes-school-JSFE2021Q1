@@ -615,11 +615,14 @@
   background-image: url("assets/images/pinterest.svg");
 }
 
-.footer__link-telegram {
+.footer__link-youtube {
   display: block;
   width: 40px;
   height: 40px;
-  background-image: url("assets/images/telegram.svg");
+  background-image: url("assets/images/youtube.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 @media screen and (max-width: 1250px) {
