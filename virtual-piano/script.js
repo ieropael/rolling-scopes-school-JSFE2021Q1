@@ -34,6 +34,13 @@ window.addEventListener('keydown', (event) => {
     const src = `assets/audio/${note}.mp3`;
     if (event.code == key) {
       playAudio(src);
+      elem.classList.add('piano-key-active');
     }
+  });
+});
+
+window.addEventListener('keyup', () => {
+  pianoKeys.forEach((elem) => {
+    elem.classList.remove('piano-key-active');
   });
 });
