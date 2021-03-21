@@ -14,4 +14,15 @@ piano.addEventListener('mousedown', (event) => {
     const src = `assets/audio/${note}.mp3`;
     playAudio(src);
   }
-})
+});
+
+piano.addEventListener('mousedown', (event) => {
+  if (event.target.classList.contains('piano-key')) {
+    pianoKeys.forEach((elem) => {
+      if (elem.classList.contains('piano-key-active')) {
+        elem.classList.remove('piano-key-active');
+      }
+    });
+    event.target.classList.add('piano-key-active');
+  }
+});
