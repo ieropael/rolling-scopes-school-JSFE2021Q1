@@ -26,3 +26,14 @@ piano.addEventListener('mousedown', (event) => {
     event.target.classList.add('piano-key-active');
   }
 });
+
+window.addEventListener('keydown', (event) => {
+  pianoKeys.forEach((elem) => {
+    const key = `Key${elem.dataset.letter}`;
+    const note = elem.dataset.note;
+    const src = `assets/audio/${note}.mp3`;
+    if (event.code == key) {
+      playAudio(src);
+    }
+  });
+});
