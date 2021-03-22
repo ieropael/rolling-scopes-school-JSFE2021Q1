@@ -1,6 +1,9 @@
 const piano = document.querySelector('.piano');
 const pianoKeys = document.querySelectorAll('.piano-key');
 
+const toggle = document.querySelector('.btn-container');
+const toggleButtons = document.querySelectorAll('.btn');
+
 function startCorrespondOver(event) {
   startSound(event);
   pianoKeys.forEach((elem) => {
@@ -42,6 +45,9 @@ piano.addEventListener('mousedown', startCorrespondOver);
 document.addEventListener('mouseup', stopCorrespondOver);
 
 window.addEventListener('keydown', (event) => {
+  if (event.repeat) {
+    return;
+  }
   pianoKeys.forEach((elem) => {
     const key = `Key${elem.dataset.letter}`;
     const note = elem.dataset.note;
@@ -57,4 +63,17 @@ window.addEventListener('keyup', () => {
   pianoKeys.forEach((elem) => {
     elem.classList.remove('piano-key-active');
   });
+});
+
+toggle.addEventListener('click', (event) => {
+  if (event.target.classList.contains('btn-notes')) {
+    pianoKeys.forEach((elem) => {
+      elem.classList.remove('piano-key-letter');
+    });
+  };
+  if (event.target.classList.contains('btn-letters')) {
+    pianoKeys.forEach((elem) => {
+      elem.classList.add('piano-key-letter');
+    });
+  };
 });
