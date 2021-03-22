@@ -225,12 +225,11 @@ body {
   max-width: 1140px;
   margin: 0 auto;
 }
-.github {
+.footer-logo {
   display: block;
   width: 120px;
   height: 45px;
   padding-left: 45px;
-  background-image: url("assets/svg/github.svg");
   background-size: 35px;
   background-repeat: no-repeat;
   background-position: left center;
@@ -240,8 +239,14 @@ body {
   font-family: "Open Sans", sans-serif;
   transition: 0.3s;
 }
-.github:hover {
+.footer-logo:hover {
   color: #fff;
+}
+.footer-logo.github {
+  background-image: url("assets/svg/github.svg");
+}
+.footer-logo.youtube {
+  background-image: url("assets/svg/youtube.svg");
 }
 .rss {
   display: block;
