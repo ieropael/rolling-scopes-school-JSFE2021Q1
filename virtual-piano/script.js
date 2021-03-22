@@ -4,6 +4,8 @@ const pianoKeys = document.querySelectorAll('.piano-key');
 const toggle = document.querySelector('.btn-container');
 const toggleButtons = document.querySelectorAll('.btn');
 
+const fullscreenButton = document.querySelector('.fullscreen');
+
 function startCorrespondOver(event) {
   startSound(event);
   pianoKeys.forEach((elem) => {
@@ -39,6 +41,16 @@ function playAudio(src) {
   audio.src = src;
   audio.currentTime = 0;
   audio.play();
+}
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
 }
 
 piano.addEventListener('mousedown', startCorrespondOver);
@@ -84,4 +96,8 @@ toggle.addEventListener('click', (event) => {
       elem.classList.add('piano-key-letter');
     });
   };
+});
+
+fullscreenButton.addEventListener('click', () => {
+  toggleFullScreen();
 });
