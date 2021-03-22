@@ -1,8 +1,8 @@
 const piano = document.querySelector('.piano');
 const pianoKeys = document.querySelectorAll('.piano-key');
 
-const toggle = document.querySelector('.btn-container');
-const toggleButtons = document.querySelectorAll('.btn');
+const notes = document.querySelector('.btn-notes');
+const letters = document.querySelector('.btn-letters');
 
 const fullscreenButton = document.querySelector('.fullscreen');
 
@@ -17,7 +17,7 @@ function startCorrespondOver(event) {
 function stopCorrespondOver() {
   pianoKeys.forEach((elem) => {
     elem.removeEventListener('mouseover', startSound);
-    elem.classList.remove('piano-key-active');
+    stopSound();
   });
 }
 
@@ -27,13 +27,23 @@ function startSound(event) {
     const note = event.target.dataset.note;
     const src = `assets/audio/${note}.mp3`;
     playAudio(src);
+  } else {
+    pianoKeys.forEach((elem) => {
+      const key = `Key${elem.dataset.letter}`;
+      const note = elem.dataset.note;
+      const src = `assets/audio/${note}.mp3`;
+      if (event.code == key) {
+        elem.classList.add('piano-key-active');
+        playAudio(src);
+      }
+    });
   }
 }
 
-function stopSound(event) {
-  if (event.target.classList.contains('piano-key')) {
-    event.target.classList.remove('piano-key-active');
-  }
+function stopSound() {
+  pianoKeys.forEach((elem) => {
+    elem.classList.remove('piano-key-active');
+  });
 }
 
 function playAudio(src) {
@@ -60,15 +70,7 @@ window.addEventListener('keydown', (event) => {
   if (event.repeat) {
     return;
   }
-  pianoKeys.forEach((elem) => {
-    const key = `Key${elem.dataset.letter}`;
-    const note = elem.dataset.note;
-    const src = `assets/audio/${note}.mp3`;
-    if (event.code == key) {
-      playAudio(src);
-      elem.classList.add('piano-key-active');
-    }
-  });
+  startSound(event);
 });
 
 window.addEventListener('keyup', () => {
@@ -77,25 +79,20 @@ window.addEventListener('keyup', () => {
   });
 });
 
-toggle.addEventListener('click', (event) => {
-  if (event.target.classList.contains('btn-notes')) {
-    toggleButtons.forEach((elem) => {
-      elem.classList.remove('btn-active');
-    });
-    event.target.classList.add('btn-active');
-    pianoKeys.forEach((elem) => {
-      elem.classList.remove('piano-key-letter');
-    });
-  };
-  if (event.target.classList.contains('btn-letters')) {
-    toggleButtons.forEach((elem) => {
-      elem.classList.remove('btn-active');
-    });
-    event.target.classList.add('btn-active');
-    pianoKeys.forEach((elem) => {
-      elem.classList.add('piano-key-letter');
-    });
-  };
+notes.addEventListener('click', () => {
+  notes.classList.add('btn-active');
+  letters.classList.remove('btn-active');
+  pianoKeys.forEach((elem) => {
+    elem.classList.remove('letter');
+  });
+});
+
+letters.addEventListener('click', () => {
+  letters.classList.add('btn-active');
+  notes.classList.remove('btn-active');
+  pianoKeys.forEach((elem) => {
+    elem.classList.add('letter');
+  });
 });
 
 fullscreenButton.addEventListener('click', () => {
