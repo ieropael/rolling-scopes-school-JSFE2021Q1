@@ -67,11 +67,19 @@ window.addEventListener('keyup', () => {
 
 toggle.addEventListener('click', (event) => {
   if (event.target.classList.contains('btn-notes')) {
+    toggleButtons.forEach((elem) => {
+      elem.classList.remove('btn-active');
+    });
+    event.target.classList.add('btn-active');
     pianoKeys.forEach((elem) => {
       elem.classList.remove('piano-key-letter');
     });
   };
   if (event.target.classList.contains('btn-letters')) {
+    toggleButtons.forEach((elem) => {
+      elem.classList.remove('btn-active');
+    });
+    event.target.classList.add('btn-active');
     pianoKeys.forEach((elem) => {
       elem.classList.add('piano-key-letter');
     });
