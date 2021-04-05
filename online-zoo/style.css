@@ -126,3 +126,62 @@
 .watch__button:active {
   transform: scale(0.95);
 }
+
+.how-it-works__title {
+  margin-top: 100px;
+  margin-bottom: 29px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.how-it-works__content {
+  height: 549px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(assets/images/bg-how-it-works.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  list-style-type: none;
+}
+
+.how-it-works__picture {
+  width: 250px;
+  height: 350px;
+}
+
+.how-it-works__picture_first {
+  margin-right: -20px;
+}
+
+.how-it-works__picture_second {
+  margin-right: -25px;
+  width: 300px;
+  height: 400px;
+}
+
+.how-it-works__picture_third {
+  position: relative;
+  z-index: 1;
+  width: 350px;
+  height: 450px;
+}
+
+.how-it-works__picture_fourth {
+  margin-left: -25px;
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.how-it-works__picture_fifth {
+  margin-left: -20px;
+}
+
+.how-it-works__text {
+  margin: 32px auto 100px auto;
+  width: 933px;
+  text-align: center;
+  line-height: 130%;
+}
