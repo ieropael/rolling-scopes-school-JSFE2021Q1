@@ -282,3 +282,37 @@
   transform: scale(0.95);
 }
 
+.pay-and-feed__title {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.pay-and-feed__content {
+  padding-left: 84px;
+  padding-bottom: 100px;
+  display: flex;
+  gap: 45px;
+  background-image: url(assets/icons/icon-arrows.svg);
+  background-repeat: no-repeat;
+  background-position: 55% 82%;
+}
+
+.pay-and-feed__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+}
+
+.pay-and-feed__image {
+  width: 263px;
+  height: 242px;
+}
+
+.pay-and-feed__text {
+  line-height: 19px;
+  text-align: center;
+}
