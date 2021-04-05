@@ -6,15 +6,23 @@ const letters = document.querySelector('.btn-letters');
 
 const fullscreenButton = document.querySelector('.fullscreen');
 
+let mousePressed = false;
+
 function startCorrespondOver(event) {
+  mousePressed = true;
   startSound(event);
   pianoKeys.forEach((elem) => {
-    elem.addEventListener('mouseover', startSound);
+    elem.addEventListener('mousemove', (event) => {
+      if (mousePressed && !event.target.classList.contains('piano-key-active')) {
+        startSound(event);
+      }
+    });
     elem.addEventListener('mouseout', stopSound);
   });
 }
 
 function stopCorrespondOver() {
+  mousePressed = false;
   pianoKeys.forEach((elem) => {
     elem.removeEventListener('mouseover', startSound);
     stopSound();
