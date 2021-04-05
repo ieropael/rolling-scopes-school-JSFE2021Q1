@@ -395,3 +395,139 @@
 .testimonials__button:active {
   transform: scale(0.95);
 }
+
+.footer__wrapper {
+  display: flex;
+  align-items: flex-end;
+  height: 350px;
+  background-image: url(assets/images/bg-footer.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.footer {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 20px;
+  background-color: #dff5b0;
+}
+
+.footer__links {
+  display: flex;
+  margin-bottom: 70px;
+}
+
+.footer__logo {
+  width: 98px;
+  height: 50px;
+  margin-right: 98.5px;
+}
+
+.footer__button {
+  margin-right: 160.5px;
+  padding: 14px 30px 15px 30px;
+  font-size: 18px;
+  line-height: 21px;
+  background-color: #70cb0e;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.footer__button:hover {
+  background-color: #59a10c;
+}
+
+.footer__button:active {
+  transform: scale(0.95);
+}
+
+.footer__menu-links {
+  margin-right: 121px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer__menu-link {
+  font-size: 18px;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.footer__menu-link:hover {
+  text-shadow: #70bc0e 1px 1px 0, #70bc0e -1px -1px 0, #70bc0e -1px 1px 0, #70bc0e 1px -1px 0;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social {
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.footer__social:hover {
+  transform: scale(1.2);
+}
+
+.instagram {
+  background-image: url(assets/icons/instagram.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.facebook {
+  background-image: url(assets/icons/facebook.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.twitter {
+  background-image: url(assets/icons/twitter.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.youtube {
+  background-image: url(assets/icons/youtube.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.footer__copyright {
+  display: flex;
+  align-items: flex-end;
+}
+
+.rsschool {
+  margin-right: 57px;
+  width: 141px;
+  height: 50px;
+  background-image: url(assets/icons/rsschool.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.yem-digital {
+  margin-right: 77px;
+  width: 97px;
+  height: 50px;
+  background-image: url(assets/icons/yem-digital.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.companies {
+  margin-right: 213px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.author {
+  font-size: 18px;
+  line-height: 21px;
+}
