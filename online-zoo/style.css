@@ -316,3 +316,82 @@
   line-height: 19px;
   text-align: center;
 }
+
+.testimonials__title {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.testimonials__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonials__card {
+  padding: 22px 20px 30px 20px;
+  width: 233px;
+  height: 369px;
+  background-color: #a7e1ff;
+}
+
+.testimonials__user {
+  display: flex;
+}
+
+.testimonials__user-info {
+  padding-top: 8px;
+  padding-left: 10px;
+}
+
+.testimonials__user-avatar {
+  border-radius: 50%;
+}
+
+.testimonials__user-name {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.testimonials__user-donate {
+  margin-top: 4px;
+  padding-left: 15px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  background-image: url(assets/icons/icon-coin.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+.testimonials__text {
+  padding-top: 18px;
+  line-height: 120%;
+}
+
+.testimonials__link {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+}
+
+.testimonials__button {
+  padding: 15px 60px;
+  font-size: 18px;
+  background-color: #70cb0e;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.testimonials__button:hover {
+  background-color: #59a10c;
+}
+
+.testimonials__button:active {
+  transform: scale(0.95);
+}
