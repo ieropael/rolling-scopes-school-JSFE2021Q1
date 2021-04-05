@@ -20,13 +20,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: none;
-  outline: none;
   font-family: Roboto, Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
-  color: #000;
-  text-decoration: none;
 }
 
 .container {
@@ -55,7 +51,7 @@
 }
 
 .header__menu {
-  margin-top: 30px;
+  margin-top: 31px;
   display: flex;
   gap: 35px;
   list-style-type: none;
@@ -65,6 +61,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
+  color: #000;
   text-decoration: none;
   background-image: linear-gradient(#70bc0e, #70bc0e);
   background-position: 0% 100%;
@@ -93,7 +90,7 @@
 .watch__wrapper {
   background-image: url(assets/images/bg-watch.png);
   background-repeat: no-repeat;
-  background-position: 219px 0;
+  background-position: 211px 0;
 }
 
 .watch__text {
@@ -110,8 +107,12 @@
 .button {
   font-size: 18px;
   line-height: 21px;
+  color: #000;
+  text-decoration: none;
   background-color: #70cb0e;
+  border: none;
   border-radius: 30px;
+  outline: none;
   cursor: pointer;
 }
 
@@ -125,36 +126,38 @@
 
 .watch__button {
   margin-bottom: 137px;
-  padding: 15px 87.5px 15px 111.5px;
+  padding: 15px 88px 15px 112px;
   background-image: url(assets/icons/play-button.svg);
   background-repeat: no-repeat;
-  background-position: 89px 50%;
+  background-position: 92px 50%;
 }
 
 .title {
-  margin-top: 100px;
   text-align: center;
   font-weight: 500;
   font-size: 40px;
 }
 
 .how-it-works__title {
-  margin-bottom: 29px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  padding-left: 2px;
 }
 
 .how-it-works__content {
   padding-top: 51px;
   padding-bottom: 48px;
   display: flex;
+  justify-content: center;
   align-items: center;
   background-image: url(assets/images/bg-how-it-works.svg);
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 48% 48%;
   list-style-type: none;
 }
 
 .how-it-works__item {
-  line-height: 0;
+  line-height: 1;
 }
 
 .how-it-works__picture {
@@ -193,22 +196,39 @@
 .how-it-works__text {
   margin: 32px auto 100px auto;
   width: 933px;
+  height: 126px;
   text-align: center;
   line-height: 130%;
 }
 
+.how-it-works__link {
+  text-decoration: underline;
+}
+
+.pets-in-zoo {
+  padding-top: 98px;
+  width: 100%;
+}
+
+.pets-in-zoo__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .pets-in-zoo__title {
-  padding-top: 100px;
   padding-bottom: 80px;
   text-align: center;
   font-size: 40px;
   font-weight: 500;
 }
 
-.pets-in-zoo__content {
+.pets-in-zoo__animals {
+  margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .arrow {
@@ -234,19 +254,21 @@
   background-image: url(assets/icons/arrow-right.svg);
 }
 
-.pets-in-zoo__animals {
+.pets-in-zoo__slides {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
   row-gap: 30px;
 }
 
-.pets-in-zoo__animal {
+.pets-in-zoo__slide {
   position: relative;
+  display: block;
+  line-height: 0;
   cursor: pointer;
 }
 
-.pets-in-zoo__animal:hover {
+.pets-in-zoo__slide:hover {
   transform: scale(1.1);
 }
 
@@ -268,45 +290,26 @@
   color: #fff;
 }
 
-.pets-in-zoo__link {
-  padding-top: 50px;
-  padding-bottom: 100px;
-  margin: 0 auto;
-}
-
 .pets-in-zoo__button {
+  margin-bottom: 100px;
+  padding: 15px 60px;
   width: 286px;
-  height: 51px;
-  font-size: 18px;
-  background-color: #70cb0e;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-.pets-in-zoo__button:hover {
-  background-color: #59a10c;
-}
-
-.pets-in-zoo__button:active {
-  transform: scale(0.95);
 }
 
 .pay-and-feed__title {
   padding-top: 100px;
-  padding-bottom: 80px;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 500;
+  padding-bottom: 81px;
+  padding-left: 1px;
 }
 
 .pay-and-feed__content {
-  padding-left: 84px;
+  padding-left: 86px;
   padding-bottom: 100px;
   display: flex;
   gap: 45px;
   background-image: url(assets/icons/icon-arrows.svg);
   background-repeat: no-repeat;
-  background-position: 55% 82%;
+  background-position: 55% 81%;
 }
 
 .pay-and-feed__info {
@@ -322,22 +325,28 @@
 }
 
 .pay-and-feed__text {
+  margin-top: -3px;
   line-height: 19px;
   text-align: center;
 }
 
-.testimonials__title {
-  padding-top: 100px;
-  padding-bottom: 80px;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 500;
+.testimonials__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.testimonials__content {
+.testimonials__title {
+  margin-right: -2px;
+  padding-top: 96px;
+  padding-bottom: 81px;
+}
+
+.testimonials__cards {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .testimonials__card {
@@ -383,18 +392,11 @@
   line-height: 120%;
 }
 
-.testimonials__link {
-  padding-top: 50px;
-  padding-bottom: 100px;
-  margin: 0 auto;
-}
-
 .testimonials__button {
+  margin-top: 50px;
+  margin-bottom: 85px;
   padding: 15px 60px;
-  font-size: 18px;
-  background-color: #70cb0e;
-  border-radius: 30px;
-  cursor: pointer;
+  width: 246px;
 }
 
 .testimonials__button:hover {
@@ -405,17 +407,18 @@
   transform: scale(0.95);
 }
 
-.footer__wrapper {
+.footer {
   display: flex;
   align-items: flex-end;
-  height: 350px;
+  height: 285px;
   background-image: url(assets/images/bg-footer.svg);
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 5px 100%;
 }
 
-.footer {
+.footer__wrapper {
   width: 100%;
+  height: 270px;
   padding-top: 80px;
   padding-bottom: 20px;
   background-color: #dff5b0;
@@ -423,23 +426,24 @@
 
 .footer__links {
   display: flex;
-  margin-bottom: 70px;
+  margin-bottom: 63px;
 }
 
 .footer__logo {
+  margin-right: 100px;
+}
+
+.footer__logo-image {
   width: 98px;
   height: 50px;
-  margin-right: 98.5px;
 }
 
 .footer__button {
-  margin-right: 160.5px;
-  padding: 14px 30px 15px 30px;
-  font-size: 18px;
-  line-height: 21px;
-  background-color: #70cb0e;
-  border-radius: 30px;
-  cursor: pointer;
+  margin-right: 162px;
+  display: block;
+  width: 230px;
+  height: 50px;
+  padding: 14px 28.5px 15px 28.5px;
 }
 
 .footer__button:hover {
@@ -451,6 +455,11 @@
 }
 
 .footer__menu-links {
+  margin-right: 3px;
+  display: flex;
+}
+
+.footer__menu-wrapper {
   margin-right: 121px;
   display: flex;
   flex-direction: column;
@@ -460,6 +469,8 @@
 .footer__menu-link {
   font-size: 18px;
   line-height: 21px;
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
 }
 
