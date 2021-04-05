@@ -30,8 +30,10 @@
 }
 
 .container {
-  width: 1160px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 1160px;
 }
 
 .header {
@@ -185,3 +187,98 @@
   text-align: center;
   line-height: 130%;
 }
+
+.pets-in-zoo__title {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.pets-in-zoo__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  width: 63px;
+  height: 63px;
+  background-color: #ffe68e;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: #fddc62;
+  transform: scale(1.2);
+}
+
+.arrow_left {
+  background-image: url(assets/icons/arrow-left.svg);
+}
+
+.arrow_right {
+  background-image: url(assets/icons/arrow-right.svg);
+}
+
+.pets-in-zoo__animals {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.pets-in-zoo__animal {
+  position: relative;
+  cursor: pointer;
+}
+
+.pets-in-zoo__animal:hover {
+  transform: scale(1.1);
+}
+
+.pets-in-zoo__picture {
+  width: 233px;
+  height: 300px;
+}
+
+.pets-in-zoo__description {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+}
+
+.pets-in-zoo__link {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+}
+
+.pets-in-zoo__button {
+  width: 286px;
+  height: 51px;
+  font-size: 18px;
+  background-color: #70cb0e;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.pets-in-zoo__button:hover {
+  background-color: #59a10c;
+}
+
+.pets-in-zoo__button:active {
+  transform: scale(0.95);
+}
+
