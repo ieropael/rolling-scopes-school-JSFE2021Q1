@@ -1,19 +1,19 @@
 @font-face {
   font-family: Roboto;
   font-weight: 400;
-  src: url(/online-zoo/assets/fonts/Roboto-Regular.ttf);
+  src: url(/assets/fonts/Roboto-Regular.ttf);
 }
 
 @font-face {
   font-family: Roboto;
   font-weight: 500;
-  src: url(/online-zoo/assets/fonts/Roboto-Medium.ttf);
+  src: url(/assets/fonts/Roboto-Medium.ttf);
 }
 
 @font-face {
   font-family: SceneW01-Black;
   font-weight: 900;
-  src: url(/online-zoo/assets/fonts/SceneW01-Black.ttf);
+  src: url(/assets/fonts/SceneW01-Black.ttf);
 }
 
 * {
@@ -95,7 +95,7 @@
 .map {
   position: relative;
   height: 745px;
-  background-image: url(/online-zoo/assets/images/map.svg);
+  background-image: url(/assets/images/map.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -243,7 +243,7 @@
   display: flex;
   align-items: flex-end;
   height: 285px;
-  background-image: url(/online-zoo/assets/images/bg-footer.svg);
+  background-image: url(/assets/images/bg-footer.svg);
   background-repeat: no-repeat;
   background-position: 5px 100%;
 }
@@ -327,25 +327,25 @@
 }
 
 .instagram {
-  background-image: url(/online-zoo/assets/icons/instagram.svg);
+  background-image: url(/assets/icons/instagram.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .facebook {
-  background-image: url(/online-zoo/assets/icons/facebook.svg);
+  background-image: url(/assets/icons/facebook.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .twitter {
-  background-image: url(/online-zoo/assets/icons/twitter.svg);
+  background-image: url(/assets/icons/twitter.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .youtube {
-  background-image: url(/online-zoo/assets/icons/youtube.svg);
+  background-image: url(/assets/icons/youtube.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -359,7 +359,7 @@
   margin-right: 57px;
   width: 141px;
   height: 50px;
-  background-image: url(/online-zoo/assets/icons/rsschool.svg);
+  background-image: url(/assets/icons/rsschool.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -368,7 +368,7 @@
   margin-right: 77px;
   width: 97px;
   height: 50px;
-  background-image: url(/online-zoo/assets/icons/yem-digital.svg);
+  background-image: url(/assets/icons/yem-digital.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
