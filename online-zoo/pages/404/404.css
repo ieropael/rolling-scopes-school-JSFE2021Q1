@@ -44,3 +44,7 @@
   color: #59c3fb;
   text-decoration: none;
 }
+
+.error__link:hover {
+  color: #309fdb;
+}
