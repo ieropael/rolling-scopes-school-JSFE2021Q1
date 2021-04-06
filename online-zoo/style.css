@@ -496,26 +496,18 @@
 
 .instagram {
   background-image: url(assets/icons/instagram.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 .facebook {
   background-image: url(assets/icons/facebook.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 .twitter {
   background-image: url(assets/icons/twitter.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 .youtube {
   background-image: url(assets/icons/youtube.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 .footer__copyright {
@@ -528,8 +520,6 @@
   width: 141px;
   height: 50px;
   background-image: url(assets/icons/rsschool.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 .yem-digital {
@@ -537,8 +527,6 @@
   width: 97px;
   height: 50px;
   background-image: url(assets/icons/yem-digital.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 .companies {
