@@ -148,6 +148,7 @@
 
 .icon__link {
   display: block;
+  border-radius: 50%;
 }
 
 .icon__link:hover ~ .icon__tooltip {
