@@ -404,7 +404,7 @@
   margin-right: 57px;
   width: 141px;
   height: 50px;
-  background-image: url(/assets/icons/rsschool.svg);
+  background-image: url(../../assets/icons/rsschool.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -413,7 +413,7 @@
   margin-right: 77px;
   width: 97px;
   height: 50px;
-  background-image: url(/assets/icons/yem-digital.svg);
+  background-image: url(../../assets/icons/yem-digital.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
