@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Bebas Neue';
+  font-weight: 700;
+  src: url(../../assets/fonts/BebasNeue-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  margin-top: 190px;
+  margin-bottom: 190px;
+  width: 675px;
+  height: 700px;
+}
+
+.error__image {
+  margin-bottom: 26px;
+}
+
+.error__message {
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 70px;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-left: 1px;
+}
+
+.error__link {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #59c3fb;
+  text-decoration: none;
+}
