@@ -454,7 +454,7 @@
   transform: scale(0.95);
 }
 
-.footer__menu-links {
+.footer__navigation {
   margin-right: 3px;
   display: flex;
 }
