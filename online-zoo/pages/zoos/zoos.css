@@ -1,19 +1,19 @@
 @font-face {
   font-family: Roboto;
   font-weight: 400;
-  src: url(/assets/fonts/Roboto-Regular.ttf);
+  src: url(../../assets/fonts/Roboto-Regular.ttf);
 }
 
 @font-face {
   font-family: Roboto;
   font-weight: 500;
-  src: url(/assets/fonts/Roboto-Medium.ttf);
+  src: url(../../assets/fonts/Roboto-Medium.ttf);
 }
 
 @font-face {
   font-family: SceneW01-Black;
   font-weight: 900;
-  src: url(/assets/fonts/SceneW01-Black.ttf);
+  src: url(../../assets/fonts/SceneW01-Black.ttf);
 }
 
 * {
@@ -200,7 +200,7 @@
   width: 45px;
   height: 45px;
   background-color: #ffe68e;
-  background-image: url("/assets/icons/arrow-up.svg");
+  background-image: url("../../assets/icons/arrow-up.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border-radius: 50%;
@@ -218,7 +218,7 @@
   padding-left: 12px;
   height: 380px;
   width: 111px;
-  background-image: url("/assets/images/bg-aside.svg");
+  background-image: url("../../assets/images/bg-aside.svg");
   background-repeat: no-repeat;
   background-position: -8px;
 }
@@ -288,7 +288,7 @@
   display: flex;
   align-items: flex-end;
   height: 285px;
-  background-image: url(/assets/images/bg-footer.svg);
+  background-image: url(../../assets/images/bg-footer.svg);
   background-repeat: no-repeat;
   background-position: 5px 100%;
 }
@@ -372,25 +372,25 @@
 }
 
 .instagram {
-  background-image: url(/assets/icons/instagram.svg);
+  background-image: url(../../assets/icons/instagram.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .facebook {
-  background-image: url(/assets/icons/facebook.svg);
+  background-image: url(../../assets/icons/facebook.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .twitter {
-  background-image: url(/assets/icons/twitter.svg);
+  background-image: url(../../assets/icons/twitter.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .youtube {
-  background-image: url(/assets/icons/youtube.svg);
+  background-image: url(../../assets/icons/youtube.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
