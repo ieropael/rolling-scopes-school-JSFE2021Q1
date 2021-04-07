@@ -82,6 +82,7 @@
 }
 
 .main {
+  position: relative;
   margin-bottom: -15px;
   width: 100%;
   background-color: #a7e1ff;
@@ -217,8 +218,8 @@
 
 .zoom {
   position: absolute;
-  right: 11px;
-  bottom: 27px;
+  right: 20px;
+  bottom: 100px;
   width: 32px;
   height: 80px;
   background-image: url(../../assets/icons/zoom.svg);
@@ -246,6 +247,7 @@
 }
 
 .footer {
+  position: relative;
   display: flex;
   align-items: flex-end;
   height: 285px;
