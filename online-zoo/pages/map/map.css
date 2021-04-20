@@ -51,6 +51,40 @@
   height: 80px;
 }
 
+#menu__toggle {
+  opacity: 0;
+}
+
+.menu__btn {
+  display: none;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
 .header__menu {
   margin-top: 31px;
   display: flex;
@@ -80,6 +114,47 @@
   text-shadow: #70bc0e 1px 1px 0, #70bc0e -1px -1px 0, #70bc0e -1px 1px 0, #70bc0e 1px -1px 0;
   pointer-events: none;
 }
+
+@media screen and (max-width: 1200px) {
+
+  .container {
+    width: auto;
+  }
+  
+}
+
+@media screen and (max-width: 640px) {
+
+  .header__content {
+    padding-left: 20px;
+  }
+
+  .header__logo {
+    margin-right: 51px;
+  }
+
+}
+
+@media screen and (max-width: 639px) {
+
+  .header__content {
+    padding-left: 10px;
+  }
+
+  .header__logo {
+    margin-right: 51px;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .menu__btn {
+    display: flex;
+  }
+
+}
+
 
 .main {
   position: relative;
@@ -247,7 +322,6 @@
 }
 
 .footer {
-  position: relative;
   display: flex;
   align-items: flex-end;
   height: 285px;
@@ -264,6 +338,14 @@
   background-color: #dff5b0;
 }
 
+.footer__content {
+  display: grid;
+  grid-template-areas:
+    "logo footer-button footer-button links socials"
+    "rsschool yem-digital companies companies author";
+  row-gap: 63px;
+}
+
 .footer__links {
   display: flex;
   margin-bottom: 63px;
@@ -271,6 +353,7 @@
 
 .footer__logo {
   margin-right: 100px;
+  grid-area: logo;
 }
 
 .footer__logo-image {
@@ -284,6 +367,7 @@
   width: 230px;
   height: 50px;
   padding: 14px 28.5px 15px 28.5px;
+  grid-area: footer-button;
 }
 
 .footer__button:hover {
@@ -297,6 +381,7 @@
 .footer__navigation {
   margin-right: 3px;
   display: flex;
+  grid-area: links;
 }
 
 .footer__menu-wrapper {
@@ -321,6 +406,7 @@
 .footer__socials {
   display: flex;
   gap: 10px;
+  grid-area: socials;
 }
 
 .footer__social {
@@ -360,6 +446,7 @@
   width: 141px;
   height: 50px;
   background-image: url(../../assets/icons/rsschool.svg);
+  grid-area: rsschool;
 }
 
 .yem-digital {
@@ -367,15 +454,190 @@
   width: 97px;
   height: 50px;
   background-image: url(../../assets/icons/yem-digital.svg);
+  grid-area: yem-digital;
 }
 
 .companies {
-  margin-right: 213px;
   font-size: 18px;
   line-height: 21px;
+  grid-area: companies;
+  align-self: flex-end;
 }
 
 .author {
   font-size: 18px;
   line-height: 21px;
+  grid-area: author;
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 1200px) {
+  
+  .footer {
+    background-position: 14% 91%;
+  }
+
+}
+
+@media screen and (max-width: 1199px) {
+
+  .footer {
+    height: 374px;
+    background-position: -200px -52px;
+  }
+
+  .footer__wrapper {
+    height: 359px;
+  }
+
+  .footer__content {
+    padding-left: 20px;
+    display: grid;
+    grid-template-areas:
+      "logo links socials"
+      "rsschool yem-digital footer-button"
+      "author author author"
+      "companies companies companies";
+    row-gap: 10px;
+  }
+
+  .footer__logo {
+    margin-right: 0;
+    margin-bottom: 43px;
+  }
+
+  .footer__navigation {
+    margin-right: 25px;
+    gap: 55px;
+  }
+  
+  .footer__menu-wrapper {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer__button {
+    justify-self: end;
+    margin-right: 0;
+    width: 207px;
+    height: 50px;
+    padding: 14px 17px 15px 17px;
+  }
+
+  .footer__socials {
+    justify-self: end;
+  }
+  
+  .rsschool {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .yem-digital {
+    margin-right: 0;
+    justify-self: center;
+  }
+
+  .companies {
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .author {
+    justify-self: center;
+    align-self: center;
+  }
+  
+}
+
+@media screen and (max-width: 639px) {
+
+  .footer {
+    height: 757px;
+  }
+
+  .footer__wrapper {
+    height: 742px;
+  }
+  
+  .footer__content {
+    padding-left: 0;
+    justify-items: center;
+    display: grid;
+    grid-template-areas:
+      "logo logo"
+      "links links"
+      "footer-button footer-button"
+      "socials socials"
+      "rsschool yem-digital"
+      "author author"
+      "companies companies";
+    row-gap: 50px;
+  }
+
+  .footer__logo {
+    margin-right: -15px;
+    margin-bottom: 0
+  }
+
+  .rsschool {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .footer__navigation {
+    flex-direction: column;
+    margin-right: 0;
+    gap: 15px;
+  }  
+
+  .footer__menu-wrapper {
+    margin-right: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer__menu-link {
+    margin-right: -15px;
+  }
+  
+  .footer__button {
+    margin: 0;
+    margin-right: -15px;
+  }
+
+  .footer__socials {
+    margin: 0;
+    margin-right: -15px;
+    justify-self: center;
+  }
+
+  .footer__button {
+    justify-self: center;
+  }
+
+  .rsschool {
+    margin-right: 45px;
+  }
+
+  .yem-digital {
+    margin-right: -15px;
+  }
+
+  .author {
+    margin-right: -15px;
+  }
+
+  .companies {
+    margin-top: -40px;
+    margin-right: -15px;
+    text-align: center;
+    width: 210px;
+  }
+
 }
