@@ -155,7 +155,6 @@
 
 }
 
-
 .main {
   position: relative;
   margin-bottom: -15px;
@@ -250,6 +249,7 @@
   display: flex;
   align-items: center;
   opacity: 0;
+  z-index: 1;
 }
 
 .icon__tooltip-box {
@@ -336,6 +336,24 @@
   background-image: url(../../assets/images/bg-footer.svg);
   background-repeat: no-repeat;
   background-position: 5px 100%;
+}
+
+.tooltip-button {
+    margin-top: 4px;
+    display: block;
+    width: 147px;
+    height: 40px;
+    padding: 9.5px 21.5px 9.5px 21.5px;
+    background: #FFB600;
+    cursor: default;
+}
+
+.footer__button:hover {
+  background-color: #59a10c;
+}
+
+.footer__button:active {
+  transform: scale(0.95);
 }
 
 .footer__wrapper {
@@ -496,6 +514,11 @@
 
 @media screen and (max-width: 1199px) {
 
+  .icon__tooltip-box {
+    width: 169px;
+    height: 100px;
+  }
+
   .header__logo {
     margin-right: 36px;
   }
@@ -582,6 +605,11 @@
 }
 
 @media screen and (max-width: 639px) {
+
+  .map {
+    background-image: url(../../assets/images/map_tablet.svg);
+    background-position: 0 0;
+  }
 
   .footer {
     height: 757px;
