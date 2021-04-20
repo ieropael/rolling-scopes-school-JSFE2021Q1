@@ -46,7 +46,7 @@
 }
 
 .header__logo {
-  margin-right: 58px;
+  margin-right: 44px;
   padding-top: 12px;
   height: 80px;
 }
@@ -161,19 +161,23 @@
   margin-bottom: -15px;
   width: 100%;
   background-color: #a7e1ff;
+  display: flex;
+  overflow: hidden;
 }
 
 .map__wrapper {
   padding-top: 100px;
   padding-bottom: 100px;
+  margin-left: 20px;
 }
 
 .map {
   position: relative;
-  height: 745px;
   background-image: url(../../assets/images/map.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  min-width: 1160px;
+  min-height: 745px;
 }
 
 .country {
@@ -292,12 +296,16 @@
 }
 
 .zoom {
-  position: absolute;
-  right: 20px;
-  bottom: 100px;
+  position: sticky;
+  align-self: flex-end;
+  bottom: 20px;
+  left: 100%;
   width: 32px;
   height: 80px;
   background-image: url(../../assets/icons/zoom.svg);
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+  margin-right: 10px;
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
 }
 
@@ -476,15 +484,35 @@
   
   .footer {
     background-position: 14% 91%;
+    padding-right: 22px;
+  }
+
+  .map__wrapper {
+    
+  margin-left: 0;
   }
 
 }
 
 @media screen and (max-width: 1199px) {
 
+  .header__logo {
+    margin-right: 36px;
+  }
+
+  .map {
+    height: 800px;
+  }
+
+  .map__wrapper {
+    height: 800px;
+  }
+
   .footer {
     height: 374px;
     background-position: -200px -52px;
+    padding-right: 5px;
+    
   }
 
   .footer__wrapper {
