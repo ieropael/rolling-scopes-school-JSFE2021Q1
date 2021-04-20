@@ -42,10 +42,12 @@
     <section class="watch">
       <div class="watch__wrapper">
         <div class="container">
-          <h2 class="watch__text">
-            Watch your favorite animal ONLINE
-          </h2>
-          <a class="watch__link" href="pages/zoos/panda.html"><button class="watch__button button">Play</button></a>
+          <div class="watch__content">
+            <h2 class="watch__text">
+              Watch your favorite animal ONLINE
+            </h2>
+            <a class="watch__link" href="pages/zoos/panda.html"><button class="watch__button button">Play</button></a>
+          </div>
         </div>
       </div>
     </section>
@@ -83,35 +85,35 @@
             <div class="arrow arrow_left"></div>
             <div class="pets-in-zoo__slides">
               <a class="pets-in-zoo__slide" href="pages/zoos/panda.html">
-                <img class="pets-in-zoo__picture" src="assets/images/panda-china.jpg" alt="Panda">
+                <div class="pets-in-zoo__picture pets-in-zoo__panda"></div>
                 <span class="pets-in-zoo__description">Panda, China</span>
               </a>
               <a class="pets-in-zoo__slide" href="pages/zoos/alligator.html">
-                <img class="pets-in-zoo__picture" src="assets/images/alligator-usa.jpg" alt="Alligator">
+                <div class="pets-in-zoo__picture pets-in-zoo__alligator"></div>
                 <span class="pets-in-zoo__description">Alligator, USA</span>
               </a>
               <a class="pets-in-zoo__slide" href="pages/zoos/gorilla.html">
-                <img class="pets-in-zoo__picture" src="assets/images/gorilla-eastern-drc.jpg" alt="Gorilla">
+                <div class="pets-in-zoo__picture pets-in-zoo__gorilla"></div>
                 <span class="pets-in-zoo__description">Gorilla, Eastern DRC</span>
               </a>
-              <a class="pets-in-zoo__slide" href="##">
-                <img class="pets-in-zoo__picture" src="assets/images/elephant-south-africa.jpg" alt="Elephant">
+              <a class="pets-in-zoo__slide pets-in-zoo__tablet" href="##">
+                <div class=" pets-in-zoo__picture pets-in-zoo__elephant"></div>
                 <span class="pets-in-zoo__description">Elephant, South Africa</span>
               </a>
-              <a class="pets-in-zoo__slide" href="##">
-                <img class="pets-in-zoo__picture" src="assets/images/polar-bear-canada.jpg" alt="Polar bear">
+              <a class="pets-in-zoo__slide pets-in-zoo__mobile"  href="##">
+                <div class="pets-in-zoo__picture pets-in-zoo__polar-bear"></div>
                 <span class="pets-in-zoo__description">Polar bear, Canada</span>
               </a>
               <a class="pets-in-zoo__slide" href="pages/zoos/eagle.html">
-                <img class="pets-in-zoo__picture" src="assets/images/bald-eagle-usa.jpg" alt="Bald eagle">
+                <div class="pets-in-zoo__picture pets-in-zoo__bald-eagle"></div>
                 <span class="pets-in-zoo__description">Bald eagle, USA</span>
               </a>
-              <a class="pets-in-zoo__slide" href="##">
-                <img class="pets-in-zoo__picture" src="assets/images/arctic-snowy-owl-alaska.jpg" alt="Arctic snowy owl">
+              <a class="pets-in-zoo__slide pets-in-zoo__mobile" href="##">
+                <div class="pets-in-zoo__picture pets-in-zoo__arctic-snowy-owl"></div>
                 <span class="pets-in-zoo__description">Arctic snowy owl, Alaska</span>
               </a>
-              <a class="pets-in-zoo__slide" href="##">
-                <img class="pets-in-zoo__picture" src="assets/images/penguin-usa.jpg" alt="Penguin">
+              <a class="pets-in-zoo__slide pets-in-zoo__tablet" href="##">
+                <div class="pets-in-zoo__picture pets-in-zoo__penguin"></div>
                 <span class="pets-in-zoo__description">Penguin, USA</span>
               </a>
             </div>
@@ -150,60 +152,62 @@
       <div class="container">
         <div class="testimonials__content">
           <h2 class="testimonials__title title">Testimonials</h2>
-          <div class="testimonials__cards">
+          <div class="testimonials__wrapper">
             <div class="arrow arrow_left"></div>
-            <div class="testimonials__card">
-              <div class="testimonials__user">
-                <img class="testimonials__user-avatar" src="assets/images/avatar-karen.jpg" alt="Avatar">
-                <div class="testimonials__user-info">
-                  <span class="testimonials__user-name">Karen Maitland</span>
-                  <span class="testimonials__user-donate">+$10</span>
+            <div class="testimonials__cards">
+              <div class="testimonials__card">
+                <div class="testimonials__user">
+                  <img class="testimonials__user-avatar" src="assets/images/avatar-karen.jpg" alt="Avatar">
+                  <div class="testimonials__user-info">
+                    <span class="testimonials__user-name">Karen Maitland</span>
+                    <span class="testimonials__user-donate">+$10</span>
+                  </div>
                 </div>
+                <p class="testimonials__text">
+                  "Thank you so much for these wonderful live webcams of the eagles on Catalina Island.
+                  Being able to watch them in their natural habitat as opposed to zoos is so wonderful.
+                  I cannot see myself ever being able to come up there to see them in person, so this is a great substitute. Thank you again."
+                </p>
               </div>
-              <p class="testimonials__text">
-                "Thank you so much for these wonderful live webcams of the eagles on Catalina Island.
-                Being able to watch them in their natural habitat as opposed to zoos is so wonderful.
-                I cannot see myself ever being able to come up there to see them in person, so this is a great substitute. Thank you again."
-              </p>
-            </div>
-            <div class="testimonials__card">
-              <div class="testimonials__user">
-                <img class="testimonials__user-avatar" src="assets/images/avatar-sara.jpg" alt="Avatar">
-                <div class="testimonials__user-info">
-                  <span class="testimonials__user-name">Sara Jones</span>
-                  <span class="testimonials__user-donate">+$13</span>
+              <div class="testimonials__card">
+                <div class="testimonials__user">
+                  <img class="testimonials__user-avatar" src="assets/images/avatar-sara.jpg" alt="Avatar">
+                  <div class="testimonials__user-info">
+                    <span class="testimonials__user-name">Sara Jones</span>
+                    <span class="testimonials__user-donate">+$13</span>
+                  </div>
                 </div>
+                <p class="testimonials__text">
+                  "A disability prevents me from enjoying the outdoors and travel like I used to do.
+                  I really enjoy all the live cams and can spend HOURS watching real-time entertainment. Wild life style!"
+                </p>
               </div>
-              <p class="testimonials__text">
-                "A disability prevents me from enjoying the outdoors and travel like I used to do.
-                I really enjoy all the live cams and can spend HOURS watching real-time entertainment. Wild life style!"
-              </p>
-            </div>
-            <div class="testimonials__card">
-              <div class="testimonials__user">
-                <img class="testimonials__user-avatar" src="assets/images/avatar-alex.jpg" alt="Avatar">
-                <div class="testimonials__user-info">
-                  <span class="testimonials__user-name">Alex Barden</span>
-                  <span class="testimonials__user-donate">+$7</span>
+              <div class="testimonials__card">
+                <div class="testimonials__user">
+                  <img class="testimonials__user-avatar" src="assets/images/avatar-alex.jpg" alt="Avatar">
+                  <div class="testimonials__user-info">
+                    <span class="testimonials__user-name">Alex Barden</span>
+                    <span class="testimonials__user-donate">+$7</span>
+                  </div>
                 </div>
+                <p class="testimonials__text">
+                  "Here's a huge "thank-you" from New Hampshire - you allow me to travel the world without ever leaving the comfort of my office chair.
+                  Jammies on and coffee cup in hand, I am Phineas Fogg!!"
+                </p>
               </div>
-              <p class="testimonials__text">
-                "Here's a huge "thank-you" from New Hampshire - you allow me to travel the world without ever leaving the comfort of my office chair.
-                Jammies on and coffee cup in hand, I am Phineas Fogg!!"
-              </p>
-            </div>
-            <div class="testimonials__card">
-              <div class="testimonials__user">
-                <img class="testimonials__user-avatar" src="assets/images/avatar-alene.jpg" alt="Avatar">
-                <div class="testimonials__user-info">
-                  <span class="testimonials__user-name">Alene Ray</span>
-                  <span class="testimonials__user-donate">+$18</span>
+              <div class="testimonials__card">
+                <div class="testimonials__user">
+                  <img class="testimonials__user-avatar" src="assets/images/avatar-alene.jpg" alt="Avatar">
+                  <div class="testimonials__user-info">
+                    <span class="testimonials__user-name">Alene Ray</span>
+                    <span class="testimonials__user-donate">+$18</span>
+                  </div>
                 </div>
+                <p class="testimonials__text">
+                  "Thank you for all the knowledge, education, pleasure and happiness you have add to all our lives at no expense on our part.
+                  My humble thanks and gratitude are being wished for all of you. I want to thank you and feed the animals a small reward"
+                </p>
               </div>
-              <p class="testimonials__text">
-                "Thank you for all the knowledge, education, pleasure and happiness you have add to all our lives at no expense on our part.
-                My humble thanks and gratitude are being wished for all of you. I want to thank you and feed the animals a small reward"
-              </p>
             </div>
             <div class="arrow arrow_right"></div>
           </div>
@@ -215,7 +219,7 @@
   <footer class="footer">
     <div class="footer__wrapper">
       <div class="container">
-        <div class="footer__links">
+        <div class="footer__content">
           <a class="footer__logo" href="index.html">
             <img class="footer__logo-image" src="assets/icons/logo.svg" alt="Logo">
           </a>
@@ -236,8 +240,6 @@
             <a class="footer__social twitter" href="https://twitter.com/" target="_blank"></a>
             <a class="footer__social youtube"href="https://www.youtube.com/" target="_blank"></a>
           </div>
-        </div>
-        <div class="footer__copyright">
           <div class="rsschool" title="Rolling Scopes School"></div>
           <div class="yem-digital" title="Yem Digital"></div>
           <span class="companies">Copyright ©RSSchool and ©Yem Digital 2020 - 2021</span>
