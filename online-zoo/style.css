@@ -50,6 +50,40 @@
   height: 80px;
 }
 
+#menu__toggle {
+  opacity: 0;
+}
+
+.menu__btn {
+  display: none;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
 .header__menu {
   margin-top: 31px;
   display: flex;
@@ -100,7 +134,7 @@
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 639px) {
 
   .header__content {
     padding-left: 10px;
@@ -108,6 +142,14 @@
 
   .header__logo {
     margin-right: 51px;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .menu__btn {
+    display: flex;
   }
 
 }
@@ -197,7 +239,7 @@
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 639px) {
 
   .watch__wrapper {
     background-position: 58% 0;
@@ -294,6 +336,11 @@
 
 @media screen and (max-width: 1440px) {
 
+  .how-it-works__content {
+    
+    overflow: hidden;
+  }
+
   .how-it-works__picture_first {
     margin-right: -70px;
   }
@@ -312,7 +359,7 @@
 
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1199px) {
 
   .how-it-works {
     padding-left: 20px;
@@ -331,7 +378,7 @@
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 639px) {
 
   .how-it-works {
     padding-left: 10px;
@@ -579,7 +626,7 @@
   
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 639px) {
 
   .pets-in-zoo__animals {
     display: grid;
@@ -600,8 +647,24 @@
   }
 
   .pets-in-zoo__picture {
-    width: 187px;
+    width: 140px;
     height: 300px;
+  }
+
+  .pets-in-zoo__panda {
+    background-image: url(assets/images/panda-china_mobile.jpg);
+  }
+  
+  .pets-in-zoo__alligator {
+    background-image: url(assets/images/alligator-usa_mobile.jpg);
+  }
+  
+  .pets-in-zoo__gorilla {
+    background-image: url(assets/images/gorilla-eastern-drc_mobile.jpg);
+  }
+  
+  .pets-in-zoo__bald-eagle {
+    background-image: url(assets/images/bald-eagle-usa_mobile.jpg);
   }
   
   .pets-in-zoo__mobile {
@@ -649,7 +712,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 320px;
+  width: 639px;
 }
 
 .pay-and-feed__image {
@@ -663,7 +726,7 @@
   text-align: center;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1199px) {
 
   .pay-and-feed {
     padding-left: 20px;
@@ -705,6 +768,27 @@
     justify-self: center;
   }
 
+}
+
+@media screen and (max-width: 639px) {
+
+  .pay-and-feed__content {
+    height: 603;
+    row-gap: 79px;
+    grid-template-areas: 
+      "icon-card"
+      "icon-zoo"
+      "icon-panda";
+    background-image: url(assets/icons/icon-arrows_mobile.svg);
+    background-position: 50% 47%;
+  }
+
+  .pay-and-feed__title {
+    padding-top: 102px;
+    padding-bottom: 60px;
+    padding-left: 1px;
+  }
+  
 }
 
 .testimonials__content {
@@ -790,7 +874,7 @@
   transform: scale(0.95);
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1199px) {
 
   .testimonials__title {
     padding-top: 100px;
@@ -835,6 +919,24 @@
   .testimonials__button {
     padding: 15px 50px;
     width: 226px;
+  }
+
+}
+
+@media screen and (max-width: 639px) {
+  
+  .testimonials__cards {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .testimonials__card {
+    width: 300px;
+    height: auto;
+  }
+
+  .testimonials__card:nth-child(3) {
+    display: none;
   }
 
 }
@@ -998,7 +1100,7 @@
 
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1199px) {
 
   .footer {
     height: 374px;
@@ -1069,4 +1171,93 @@
     align-self: center;
   }
   
+}
+
+@media screen and (max-width: 639px) {
+
+  .footer {
+    height: 757px;
+  }
+
+  .footer__wrapper {
+    height: 742px;
+  }
+  
+  .footer__content {
+    padding-left: 0;
+    justify-items: center;
+    display: grid;
+    grid-template-areas:
+      "logo logo"
+      "links links"
+      "footer-button footer-button"
+      "socials socials"
+      "rsschool yem-digital"
+      "author author"
+      "companies companies";
+    row-gap: 50px;
+  }
+
+  .footer__logo {
+    margin-right: -15px;
+    margin-bottom: 0
+  }
+
+  .rsschool {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .footer__navigation {
+    flex-direction: column;
+    margin-right: 0;
+    gap: 15px;
+  }  
+
+  .footer__menu-wrapper {
+    margin-right: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer__menu-link {
+    margin-right: -15px;
+  }
+  
+  .footer__button {
+    margin: 0;
+    margin-right: -15px;
+  }
+
+  .footer__socials {
+    margin: 0;
+    margin-right: -15px;
+    justify-self: center;
+  }
+
+  .footer__button {
+    justify-self: center;
+  }
+
+  .rsschool {
+    margin-right: 45px;
+  }
+
+  .yem-digital {
+    margin-right: -15px;
+  }
+
+  .author {
+    margin-right: -15px;
+  }
+
+  .companies {
+    margin-top: -40px;
+    margin-right: -15px;
+    text-align: center;
+    width: 210px;
+  }
+
 }
