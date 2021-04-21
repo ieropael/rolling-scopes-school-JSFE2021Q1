@@ -120,14 +120,14 @@
   .container {
     width: auto;
   }
+  .header__content {
+    padding-left: 20px;
+  }
   
 }
 
 @media screen and (max-width: 640px) {
 
-  .header__content {
-    padding-left: 20px;
-  }
 
   .header__logo {
     margin-right: 51px;
@@ -160,14 +160,12 @@
   margin-bottom: -15px;
   width: 100%;
   background-color: #a7e1ff;
-  display: flex;
   overflow: hidden;
 }
 
 .map__wrapper {
   padding-top: 100px;
   padding-bottom: 100px;
-  margin-left: 20px;
 }
 
 .map {
@@ -296,10 +294,10 @@
 }
 
 .zoom {
-  position: sticky;
+  position: absolute;
   align-self: flex-end;
-  bottom: 20px;
-  left: 100%;
+  bottom: 0;
+  right: 10px;
   width: 32px;
   height: 80px;
   background-image: url(../../assets/icons/zoom.svg);
@@ -340,7 +338,7 @@
 
 .tooltip-button {
     margin-top: 4px;
-    display: block;
+    display: none;
     width: 147px;
     height: 40px;
     padding: 9.5px 21.5px 9.5px 21.5px;
@@ -499,25 +497,80 @@
 }
 
 @media screen and (max-width: 1200px) {
+
+  .footer__navigation {
+    gap: 121px;
+    margin-right: 121px;
+  }
+
+  .footer__menu-wrapper {
+    margin-right: 0;
+  }
   
   .footer {
-    background-position: 14% 91%;
+    padding-left: 20px;
     padding-right: 22px;
   }
 
-  .map__wrapper {
-    
-  margin-left: 0;
+  .footer__wrapper {
+    width: 100%;
+  }
+
+  .country__usa {
+    top: 377px;
+    left: 221px;
+  }
+  
+  .country__drc {
+    top: 523px;
+    left: 531px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  
+  .country__china {
+    top: 391px;
+    left: 853px;
+  }
+  
+  .animal__eagle {
+    top: 416px;
+    left: 37px;
+  }
+  
+  .animal__gorilla {
+    top: 524px;
+    left: 747px;
+  }
+  
+  .animal__panda {
+    top: 417px;
+    left: 1014px;
+  }
+  
+  .icon__eagle {
+    top: 393px;
+    left: 94px;
+  }
+
+  .icon__alligator {
+    top: 402px;
+    left: 320px;
+  }
+
+  .icon__gorilla {
+    top: 505px;
+    left: 675px;
+  }
+
+  .icon__panda {
+    top: 404px;
+    left: 942px;
   }
 
 }
 
 @media screen and (max-width: 1199px) {
-
-  .icon__tooltip-box {
-    width: 169px;
-    height: 100px;
-  }
 
   .header__logo {
     margin-right: 36px;
@@ -543,7 +596,8 @@
   }
 
   .footer__content {
-    padding-left: 20px;
+    padding-left: 0;
+    padding-right: 17px;
     display: grid;
     grid-template-areas:
       "logo links socials"
@@ -602,6 +656,64 @@
     align-self: center;
   }
   
+}
+
+@media screen and (max-width: 640px) {
+  
+  .icon__tooltip-box {
+    width: 169px;
+    height: 100px;
+  }
+
+  .tooltip-button {
+    display: block;
+  }
+
+  .map {
+    background-position: 0 0;
+    background-image: url(../../assets/images/map_tablet.svg);
+  }
+
+  .animal__eagle,
+  .icon__eagle {
+    display: none;
+  }
+
+  .animal__gorilla {
+    top: 413px;
+    left: 452px;
+  }
+
+  .country__usa {
+    top: 299px;
+    left: 11px;
+  }
+
+  .country__drc {
+    top: 428px;
+    left: 250px;
+  }
+
+  .country__china {
+    top: 315px;
+    left: 514px;
+  }
+
+  .icon__alligator {
+    top: 295px;
+    left: 98px;
+  }
+
+  .icon__gorilla {
+    top: 375px;
+    left: 379px;
+  }
+
+  .icon__panda {
+    top: 290px;
+    left: 594px;
+  }
+
 }
 
 @media screen and (max-width: 639px) {
@@ -696,4 +808,28 @@
     width: 210px;
   }
 
+}
+
+@media screen and (max-width: 320px) {
+
+  .map {
+    background-position: -40px 0;
+  }
+
+  .icon__alligator {
+    left: 58px;
+  }
+  
+  .country__drc {
+    left: 210px;
+  }
+
+  .footer {
+    padding-left: 5px;
+  }
+
+  .footer__wrapper {
+    padding-top: 75px;
+  }
+  
 }
