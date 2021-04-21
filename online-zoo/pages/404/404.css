@@ -48,3 +48,53 @@
 .error__link:hover {
   color: #309fdb;
 }
+
+@media screen and (max-width: 1200px) {
+  
+  .error {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+
+  .error {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .error__image {
+    width: 550px;
+  }
+  
+}
+
+@media screen and (max-width: 639px) {
+
+  .error {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 568px;
+  }
+
+  .error__image {
+    width: 260px;
+    margin-bottom: 14px;
+  }
+  
+  .error__message {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .error__link {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+}
