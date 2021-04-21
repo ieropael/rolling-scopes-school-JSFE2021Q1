@@ -119,17 +119,21 @@
   .container {
     width: auto;
   }
-  
-}
-
-@media screen and (max-width: 640px) {
 
   .header__content {
     padding-left: 20px;
   }
+  
+  .header__logo {
+    margin-right: 44px;
+  }
+
+}
+
+@media screen and (max-width: 640px) {
 
   .header__logo {
-    margin-right: 51px;
+    margin-right: 38px;
   }
 
 }
@@ -211,6 +215,10 @@
 
   .watch__wrapper {
     background-position: 57% 0;
+  }
+
+  .watch__content {
+    padding-left: 20px;
   }
   
 }
@@ -378,7 +386,19 @@
 
 }
 
+@media screen and (max-width: 640px) {
+
+  .how-it-works {
+    padding-left: 0;
+  }
+  
+}
+
 @media screen and (max-width: 639px) {
+
+  .how-it-works__title {
+    margin-left: -10px;
+  }
 
   .how-it-works {
     padding-left: 10px;
@@ -618,10 +638,11 @@
 
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1200px) {
 
   .pets-in-zoo {
     padding-left: 20px;
+    padding-right: 20px;
   }
   
 }
@@ -712,7 +733,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 639px;
+  width: 320px;
 }
 
 .pay-and-feed__image {
@@ -726,10 +747,18 @@
   text-align: center;
 }
 
+@media screen and (max-width: 1200px) {
+  
+  .pay-and-feed__content {
+    padding-left: 105px;
+  }
+  
+}
+
 @media screen and (max-width: 1199px) {
 
   .pay-and-feed {
-    padding-left: 20px;
+    padding-left: 0;
   }
 
   .pay-and-feed__title {
@@ -748,7 +777,7 @@
       "icon-card icon-zoo"
       "icon-panda icon-panda";
     background-image: url(assets/icons/icon-arrows_tablet.svg);
-    background-position: 100px -90px;
+    background-position: 120px -90px;
   }
 
   .pay-and-feed__info {
@@ -881,7 +910,7 @@
   }
 
   .testimonials__content {
-    padding-left: 20px;
+    padding-left: 0;
   }
   
   .testimonials__card {
@@ -1096,6 +1125,11 @@
   
   .footer {
     background-position: 14% 91%;
+  }
+
+  .footer__content {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
 }
