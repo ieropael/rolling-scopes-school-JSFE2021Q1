@@ -20,6 +20,7 @@
   margin-bottom: 190px;
   width: 675px;
   height: 700px;
+  overflow: hidden;
 }
 
 .error__image {
@@ -58,7 +59,7 @@
 
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 980px) {
 
   .error {
     display: flex;
