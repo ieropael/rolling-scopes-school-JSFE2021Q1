@@ -157,9 +157,8 @@
 
 .main {
   position: relative;
-  margin-bottom: -15px;
   width: 100%;
-  height: 945px;
+  height: 930px;
   background-color: #a7e1ff;
 }
 
@@ -325,6 +324,7 @@
   display: flex;
   align-items: flex-end;
   height: 285px;
+  background-color: #a7e1ff;
   background-image: url(../../assets/images/bg-footer.svg);
   background-repeat: no-repeat;
   background-position: 5px 100%;
@@ -492,6 +492,15 @@
 
 @media screen and (max-width: 1200px) {
 
+  .footer {
+    background-image: url(../../assets/images/bg-footer_1200.svg);
+    background-position: 0 68%;
+  }
+
+  .footer__wrapper {
+    width: 100%;
+  }
+
   .footer__navigation {
     gap: 121px;
     margin-right: 121px;
@@ -504,10 +513,6 @@
   .footer__content {
     padding-left: 20px;
     padding-right: 22px;
-  }
-
-  .footer__wrapper {
-    width: 100%;
   }
 
   .country__usa {
@@ -652,7 +657,7 @@
 @media screen and (max-width: 640px) {
 
   .main {
-    height: 800px;
+    height: 785px;
   }
   
   .icon__tooltip-box {
@@ -709,6 +714,11 @@
     left: 594px;
   }
 
+  .footer {
+    background-image: url(../../assets/images/bg-footer_tablet.svg);
+    background-position: 0 -30%;
+  }
+
 }
 
 @media screen and (max-width: 639px) {
@@ -720,6 +730,7 @@
 
   .footer {
     height: 757px;
+    background-position: 0 -6%;
   }
 
   .footer__wrapper {
@@ -817,6 +828,11 @@
   
   .country__drc {
     left: 210px;
+  }
+
+  .footer {
+    background-image: url(../../assets/images/bg-footer_mobile.svg);
+    background-position: -5px -3%;
   }
 
   .footer__content {
