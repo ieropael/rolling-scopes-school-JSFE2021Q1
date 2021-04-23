@@ -249,7 +249,7 @@
 @media screen and (max-width: 639px) {
 
   .watch__wrapper {
-    background-position: 58% 0;
+    background-position: 59% 0;
   }
 
   .watch__content {
@@ -263,7 +263,7 @@
   .watch__button {
     padding: 15px 81px 15px 103px;
     background-position: 83px 50%;
-    margin-bottom: 149px;
+    margin-bottom: 150px;
   }
   
 }
@@ -585,6 +585,25 @@
   background-image: url(assets/images/penguin-usa.jpg);
 }
 
+.pets-in-zoo__description {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+}
+
+.pets-in-zoo__button {
+  margin-bottom: 100px;
+  padding: 15px 60px;
+  width: 286px;
+}
+
 @media screen and (max-width: 1199px) {
 
   .pets-in-zoo__animals {
@@ -651,6 +670,14 @@
 
 @media screen and (max-width: 639px) {
 
+  .pets-in-zoo {
+    padding-top: 100px;
+  }
+
+  .pets-in-zoo__title {
+    padding-bottom: 80px;
+  }
+
   .pets-in-zoo__animals {
     display: grid;
     justify-content: center;
@@ -658,6 +685,7 @@
       "slides slides"
       "button-left button-right";
     row-gap: 30px;
+    margin-bottom: 51px;
   }
 
   .arrow_left {
@@ -694,25 +722,16 @@
     display: none;
   }
 
-}
+  .pets-in-zoo__description {
+    width: 90px;
+  }
 
-.pets-in-zoo__description {
-  position: absolute;
-  top: 15px;
-  right: 0;
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  font-size: 16px;
-  line-height: 19px;
-  color: #fff;
-}
+  .pets-in-zoo__button {
+    padding-right: 67px;
+    padding-left: 67px;
+    width: 300px;
+  }
 
-.pets-in-zoo__button {
-  margin-bottom: 100px;
-  padding: 15px 60px;
-  width: 286px;
 }
 
 .pay-and-feed__title {
@@ -819,9 +838,8 @@
   }
 
   .pay-and-feed__title {
-    padding-top: 102px;
+    padding-top: 100px;
     padding-bottom: 60px;
-    padding-left: 1px;
   }
   
 }
@@ -966,19 +984,36 @@
 }
 
 @media screen and (max-width: 639px) {
+
+  .testimonials__title {
+    margin-left: 10px;
+    padding-top: 100px;
+  }
   
   .testimonials__cards {
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 20px;
   }
 
   .testimonials__card {
     width: 300px;
     height: auto;
+    padding-bottom: 20px;
   }
 
   .testimonials__card:nth-child(3) {
     display: none;
+  }
+
+  .testimonials__text {
+    padding-top: 23px;
+  }
+  
+  .testimonials__button {
+    margin-top: 51px;
+    margin-left: 9px;
+    padding: 15px 50px;
+    width: 226px;
   }
 
 }
@@ -1137,7 +1172,8 @@
 @media screen and (max-width: 1200px) {
   
   .footer {
-    background-position: 14% 91%;
+    background-image: url(assets/images/bg-footer_1200.svg);
+    background-position: 0 68%;
   }
 
   .footer__content {
@@ -1220,10 +1256,20 @@
   
 }
 
+@media screen and (max-width: 640px) {
+
+  .footer {
+    background-image: url(assets/images/bg-footer_tablet.svg);
+    background-position: 0 -28%;
+  }
+  
+}
+
 @media screen and (max-width: 639px) {
 
   .footer {
     height: 757px;
+    background-position: 0 -6%;
   }
 
   .footer__wrapper {
@@ -1231,7 +1277,7 @@
   }
   
   .footer__content {
-    padding-left: 0;
+    padding-left: 10px;
     justify-items: center;
     display: grid;
     grid-template-areas:
@@ -1242,11 +1288,10 @@
       "rsschool yem-digital"
       "author author"
       "companies companies";
-    row-gap: 50px;
+    row-gap: 49px;
   }
 
   .footer__logo {
-    margin-right: -15px;
     margin-bottom: 0
   }
 
@@ -1257,7 +1302,7 @@
 
   .footer__navigation {
     flex-direction: column;
-    margin-right: 0;
+    margin-right: 15px;
     gap: 15px;
   }  
 
@@ -1280,31 +1325,31 @@
 
   .footer__socials {
     margin: 0;
-    margin-right: -15px;
     justify-self: center;
   }
 
   .footer__button {
     justify-self: center;
+    margin-right: 1px;
   }
 
   .rsschool {
-    margin-right: 45px;
-  }
-
-  .yem-digital {
-    margin-right: -15px;
-  }
-
-  .author {
-    margin-right: -15px;
+    margin-right: 62px;
   }
 
   .companies {
     margin-top: -40px;
-    margin-right: -15px;
     text-align: center;
     width: 210px;
   }
 
+}
+
+@media screen and (max-width: 320px) {
+
+  .footer {
+    background-image: url(assets/images/bg-footer_mobile.svg);
+    background-position: -5px -2%;
+  }
+  
 }
