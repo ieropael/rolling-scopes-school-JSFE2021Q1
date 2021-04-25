@@ -70,10 +70,11 @@ function getImage() {
 fileInput.addEventListener('change', function() {
   const file = fileInput.files[0];
   const reader = new FileReader();
+  reader.readAsDataURL(file);
   reader.onload = () => {
     image.src = reader.result;
   }
-  reader.readAsDataURL(file);
+  fileInput.value = null;
 });
 
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
