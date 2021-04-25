@@ -2,6 +2,7 @@ const inputs = document.querySelectorAll('.filters input');
 const resetButton = document.querySelector('.btn-reset');
 const nextButton = document.querySelector('.btn-next');
 const image = document.querySelector('img');
+const fileInput = document.querySelector('input[type="file"]');
 const base = 'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/';
 const images = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
 let i = 0;
@@ -66,6 +67,15 @@ function getImage() {
     nextButton.disabled = false;
   }, 1000);
 }
+
+fileInput.addEventListener('change', function() {
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+  reader.onload = () => {
+    image.src = reader.result;
+  }
+  reader.readAsDataURL(file);
+});
 
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
 resetButton.addEventListener('click', reset);
