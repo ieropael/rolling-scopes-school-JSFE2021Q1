@@ -41,7 +41,6 @@ function getImage() {
   const evening = new Date();
   const night = new Date();
   const time = new Date();
-  time.setHours(19, 0, 0);
   let timeOfDay = '';
   morning.setHours(6, 0, 0);
   day.setHours(12, 0, 0);
