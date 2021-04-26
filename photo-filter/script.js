@@ -1,0 +1,143 @@
+const inputs = document.querySelectorAll('.filters input');
+const buttons = document.querySelectorAll('.btn');
+const btnContainer = document.querySelector('.btn-container');
+const fullscreen = document.querySelector('.fullscreen');
+const fileInput = document.querySelector('input[type="file"]');
+const image = document.querySelector('img');
+const canvas = document.querySelector('canvas');
+const base = 'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/';
+const images = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
+let i = 0;
+
+function handleUpdate() {
+  const suffix = this.dataset.sizing || '';
+  document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+  this.nextElementSibling.value = this.value;
+}
+
+function reset() {
+  inputs.forEach(input => {
+    const suffix = input.dataset.sizing || '';
+    if (input.name === 'saturate') {
+      input.value = 100;
+    } else {
+      input.value = input.min;
+    }
+    input.nextElementSibling.value = input.value;
+    document.documentElement.style.setProperty(`--${input.name}`, input.value + suffix);
+  });
+}
+
+function viewImage(src) {  
+  const img = new Image();
+  img.src = src;
+  img.onload = () => {      
+    image.src = src;
+  };
+}
+
+function getImage(btnNext) {
+  const index = i % images.length;
+  const morning = new Date();
+  const day = new Date();
+  const evening = new Date();
+  const night = new Date();
+  const time = new Date();
+  let timeOfDay = '';
+  morning.setHours(6, 0, 0);
+  day.setHours(12, 0, 0);
+  evening.setHours(18, 0, 0);
+  night.setHours(0, 0, 0);
+  if (time >= morning && time < day) {
+    timeOfDay = 'morning/';
+  }
+  if (time >= day && time < evening) {
+    timeOfDay = 'day/';
+  }
+  if (time >= evening) {
+    timeOfDay = 'evening/';
+  }
+  if (time >= night && time < morning) {
+    timeOfDay = 'night/';
+  }
+  const imageSrc = base + timeOfDay + images[index];
+  viewImage(imageSrc);
+  i++;
+  btnNext.disabled = true;
+  setTimeout(function() {
+    btnNext.disabled = false;
+  }, 1000);
+}
+
+function loadImage() {
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => {
+    image.src = reader.result;
+  }
+  fileInput.value = null;
+  disableButtons(document.querySelector('.btn-load'));
+}
+
+function saveImage() {
+  const img = new Image();
+  img.setAttribute('crossOrigin', 'anonymous'); 
+  img.src = image.src;
+  img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext("2d");
+    let filter = '';
+    inputs.forEach(input => {
+      const suffix = input.dataset.sizing || '';
+      if (input.name === 'blur') {
+        filter += `${input.name}(${(input.value * (image.naturalHeight / image.height)).toFixed(2)}${suffix}) `;
+      } else {
+        filter += `${input.name}(${input.value}${suffix}) `;
+      }
+    });
+    ctx.filter = filter.substr(0, filter.length -1);
+    ctx.drawImage(img, 0, 0);
+    const link = document.createElement('a');
+    link.download = 'download.png';
+    link.href = canvas.toDataURL();
+    link.click();
+    link.delete;
+  };
+}
+
+function disableButtons(button) {
+  buttons.forEach(button => {
+    button.classList.remove('btn-active');
+  });
+  button.classList.add('btn-active');
+}
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
+inputs.forEach(input => input.addEventListener('input', handleUpdate));
+fileInput.addEventListener('change', loadImage);
+btnContainer.addEventListener('click', event => {
+  if (event.target.classList.contains('btn-reset')) {
+    reset();
+    disableButtons(event.target);
+  }
+  if (event.target.classList.contains('btn-next')) {
+    getImage(event.target);
+    disableButtons(event.target);
+  }
+  if (event.target.classList.contains('btn-save')) {
+    saveImage();
+    disableButtons(event.target);
+  }
+});
+fullscreen.addEventListener('click', toggleFullScreen);
