@@ -99,7 +99,6 @@ function drawImage() {
       ctx.filter = filter;
     });
     ctx.drawImage(img, 0, 0);
-    image.src = canvas.toDataURL();
     let link = document.createElement('a');
     link.download = 'download.png';
     link.href = canvas.toDataURL();
