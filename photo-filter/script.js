@@ -1,7 +1,6 @@
 const inputs = document.querySelectorAll('.filters input');
-const resetButton = document.querySelector('.btn-reset');
-const nextButton = document.querySelector('.btn-next');
-const saveButton = document.querySelector('.btn-save');
+const buttons = document.querySelectorAll('.btn');
+const btnContainer = document.querySelector('.btn-container');
 const fullscreen = document.querySelector('.fullscreen');
 const fileInput = document.querySelector('input[type="file"]');
 const image = document.querySelector('img');
@@ -19,12 +18,12 @@ function handleUpdate() {
 function reset() {
   inputs.forEach(input => {
     const suffix = input.dataset.sizing || '';
-    input.value = input.min;
-    input.nextElementSibling.value = input.min;
     if (input.name === 'saturate') {
       input.value = 100;
-      input.nextElementSibling.value = 100;
+    } else {
+      input.value = input.min;
     }
+    input.nextElementSibling.value = input.value;
     document.documentElement.style.setProperty(`--${input.name}`, input.value + suffix);
   });
 }
@@ -37,7 +36,7 @@ function viewImage(src) {
   };
 }
 
-function getImage() {
+function getImage(btnNext) {
   const index = i % images.length;
   const morning = new Date();
   const day = new Date();
@@ -64,13 +63,13 @@ function getImage() {
   const imageSrc = base + timeOfDay + images[index];
   viewImage(imageSrc);
   i++;
-  nextButton.disabled = true;
+  btnNext.disabled = true;
   setTimeout(function() {
-    nextButton.disabled = false;
+    btnNext.disabled = false;
   }, 1000);
 }
 
-fileInput.addEventListener('change', function() {
+function loadImage() {
   const file = fileInput.files[0];
   const reader = new FileReader();
   reader.readAsDataURL(file);
@@ -78,9 +77,10 @@ fileInput.addEventListener('change', function() {
     image.src = reader.result;
   }
   fileInput.value = null;
-});
+  disableButtons(document.querySelector('.btn-load'));
+}
 
-function drawImage() {
+function saveImage() {
   const img = new Image();
   img.setAttribute('crossOrigin', 'anonymous'); 
   img.src = image.src;
@@ -96,15 +96,22 @@ function drawImage() {
       } else {
         filter += `${input.name}(${input.value}${suffix}) `;
       }
-      ctx.filter = filter;
     });
+    ctx.filter = filter.substr(0, filter.length -1);
     ctx.drawImage(img, 0, 0);
-    let link = document.createElement('a');
+    const link = document.createElement('a');
     link.download = 'download.png';
     link.href = canvas.toDataURL();
     link.click();
     link.delete;
   };
+}
+
+function disableButtons(button) {
+  buttons.forEach(button => {
+    button.classList.remove('btn-active');
+  });
+  button.classList.add('btn-active');
 }
 
 function toggleFullScreen() {
@@ -118,7 +125,19 @@ function toggleFullScreen() {
 }
 
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
-resetButton.addEventListener('click', reset);
-nextButton.addEventListener('click', getImage);
-saveButton.addEventListener('click', drawImage);
+fileInput.addEventListener('change', loadImage);
+btnContainer.addEventListener('click', event => {
+  if (event.target.classList.contains('btn-reset')) {
+    reset();
+    disableButtons(event.target);
+  }
+  if (event.target.classList.contains('btn-next')) {
+    getImage(event.target);
+    disableButtons(event.target);
+  }
+  if (event.target.classList.contains('btn-save')) {
+    saveImage();
+    disableButtons(event.target);
+  }
+});
 fullscreen.addEventListener('click', toggleFullScreen);
