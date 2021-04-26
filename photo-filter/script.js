@@ -2,6 +2,7 @@ const inputs = document.querySelectorAll('.filters input');
 const resetButton = document.querySelector('.btn-reset');
 const nextButton = document.querySelector('.btn-next');
 const saveButton = document.querySelector('.btn-save');
+const fullscreen = document.querySelector('.fullscreen');
 const fileInput = document.querySelector('input[type="file"]');
 const image = document.querySelector('img');
 const canvas = document.querySelector('canvas');
@@ -107,7 +108,18 @@ function drawImage() {
   };
 }
 
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
 resetButton.addEventListener('click', reset);
 nextButton.addEventListener('click', getImage);
 saveButton.addEventListener('click', drawImage);
+fullscreen.addEventListener('click', toggleFullScreen);
