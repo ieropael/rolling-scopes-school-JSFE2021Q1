@@ -1,8 +1,10 @@
 const inputs = document.querySelectorAll('.filters input');
 const resetButton = document.querySelector('.btn-reset');
 const nextButton = document.querySelector('.btn-next');
-const image = document.querySelector('img');
+const saveButton = document.querySelector('.btn-save');
 const fileInput = document.querySelector('input[type="file"]');
+const image = document.querySelector('img');
+const canvas = document.querySelector('canvas');
 const base = 'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/';
 const images = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
 let i = 0;
@@ -77,6 +79,31 @@ fileInput.addEventListener('change', function() {
   fileInput.value = null;
 });
 
+function drawImage() {
+  const img = new Image();
+  img.setAttribute('crossOrigin', 'anonymous'); 
+  img.src = image.src;
+  img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext("2d");
+    let filter = '';
+    inputs.forEach(input => {
+      const suffix = input.dataset.sizing || '';
+      filter += `${input.name}(${input.value}${suffix}) `;
+      ctx.filter = filter;
+    });
+    ctx.drawImage(img, 0, 0);
+    image.src = canvas.toDataURL();
+    let link = document.createElement('a');
+    link.download = 'download.png';
+    link.href = canvas.toDataURL();
+    link.click();
+    link.delete;
+  };
+}
+
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
 resetButton.addEventListener('click', reset);
 nextButton.addEventListener('click', getImage);
+saveButton.addEventListener('click', drawImage);
