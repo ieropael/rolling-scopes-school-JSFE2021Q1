@@ -90,7 +90,11 @@ function drawImage() {
     let filter = '';
     inputs.forEach(input => {
       const suffix = input.dataset.sizing || '';
-      filter += `${input.name}(${input.value}${suffix}) `;
+      if (input.name === 'blur') {
+        filter += `${input.name}(${(input.value * (image.naturalHeight / image.height)).toFixed(2)}${suffix}) `;
+      } else {
+        filter += `${input.name}(${input.value}${suffix}) `;
+      }
       ctx.filter = filter;
     });
     ctx.drawImage(img, 0, 0);
