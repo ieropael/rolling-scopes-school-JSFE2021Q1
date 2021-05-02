@@ -1354,3 +1354,133 @@
   }
   
 }
+
+/* MODAL WINDOW*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+@keyframes modal {
+  from {top: -320px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+.modal__content {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 630px;
+  height: 339px;
+  padding: 60px 80px 40px 80px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: modal;
+  animation-duration: .4s;
+}
+
+.modal__select {
+  position: relative;
+  width: 470px;
+  height: 39px;
+  text-align: center;
+  text-align-last: center;
+  background-color: #dff5b0;
+	background-image: url(assets/icons/arrow-down.svg);
+	background-repeat: no-repeat;
+	background-position: 97% center;
+  border: 1px solid #9ca498;
+  outline: none;
+  appearance: none;
+}
+
+.modal__donate {
+  display: flex;
+  justify-content: space-between;
+  width: 470px;
+  height: 39px;
+}
+
+.modal__amount {
+  display: block;
+  width: 303px;
+  padding: 10px;
+  border: 1px solid #9ca498;
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+.modal__amount::-webkit-outer-spin-button,
+.modal__amount::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.modal__currency {
+  width: 159px;
+  text-align: center;
+  text-align-last: center;
+  background-color: #fff;
+  border: 1px solid #9ca498;
+  outline: none;
+  appearance: none;
+}
+
+.modal__text {
+  width: 470px;
+  height: 85px;
+  padding-top: 8px;
+  padding-left: 11px;
+  border: 1px solid #9ca498;
+  outline: none;
+}
+
+.modal__button {
+  margin-top: 12px;
+  width: 168px;
+  height: 40px;
+}
+
+.modal__close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 27px;
+  height: 27px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  opacity: .3;
+}
+
+.modal__close:before,
+.modal__close:after {
+  position: absolute;
+  left: 15px;
+  content: '';
+  height: 27px;
+  width: 1px;
+  background-color: #000;
+}
+
+.modal__close:before {
+  transform: rotate(45deg);
+}
+
+.modal__close:after {
+  transform: rotate(-45deg);
+}

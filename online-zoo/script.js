@@ -39,3 +39,41 @@ function startCarousel(event) {
 }
 
 carouselList.addEventListener('click', startCarousel);
+
+// MODAL WINDOW
+
+function maxLengthCheck(object) {
+  if (object.value.length > object.max.length)
+    object.value = object.value.slice(0, object.max.length)
+}
+  
+function isNumeric(event) {
+  let theEvent = event || window.event;
+  let key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode(key);
+  let regex = /[0-9]|\./;
+  if (!regex.test(key)) {
+    theEvent.returnValue = false;
+    if (theEvent.preventDefault) {
+      theEvent.preventDefault()
+    };
+  }
+}
+
+const modal = document.querySelector('.modal');
+const closeButton = document.querySelector('.footer__button');
+const closeModal = document.querySelector('.modal__close');
+
+closeButton.addEventListener('click', () => {
+  modal.style.display = "block";
+});
+
+closeModal.addEventListener('click', () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});

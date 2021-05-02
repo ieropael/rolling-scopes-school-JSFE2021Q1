@@ -254,6 +254,26 @@
       </div>
     </div>
   </footer>
+  <div class="modal">
+    <div class="modal__content">
+      <span class="modal__close"></span>
+      <select class="modal__select">
+        <option class="modal__select-alligator" value="Alligator">Alligator</option>
+        <option class="modal__select-panda" value="Panda">Panda</option>
+        <option class="modal__select-eagle" value="Eagle">Eagle</option>
+        <option class="modal__select-gorilla" value="Gorilla">Gorilla</option>
+      </select>
+      <div class="modal__donate">
+        <input class="modal__amount" type="number" min="1" max="9999" placeholder="Amount" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)">
+        <select class="modal__currency">
+          <option value="USD" class="dollar">USD</option>
+          <option value="EUR" class="euro">EUR</option>
+        </select>
+      </div>
+      <textarea class="modal__text" name="modal-text" maxlength="280" placeholder="Type your text here"></textarea>
+      <button class="modal__button button">Next</button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
