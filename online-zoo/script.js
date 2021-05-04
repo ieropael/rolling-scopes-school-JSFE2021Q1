@@ -61,19 +61,35 @@ function isNumeric(event) {
 }
 
 const modal = document.querySelector('.modal');
-const closeButton = document.querySelector('.footer__button');
-const closeModal = document.querySelector('.modal__close');
+const donateButton = document.querySelector('.footer__button');
+const closeModal = document.querySelectorAll('.modal__close');
+const nextButton = document.querySelector('.modal__button');
+const modalPay = document.querySelector('.modal__pay');
+const modalContent = document.querySelector('.modal__content');
+const payButton = document.querySelector('.modal__pay-button');
 
-closeButton.addEventListener('click', () => {
-  modal.style.display = "block";
+donateButton.addEventListener('click', () => {
+  modal.style.display = 'block';
+  modalContent.style.display = 'flex';
+  modalPay.style.display = 'none';
 });
 
-closeModal.addEventListener('click', () => {
+closeModal.forEach(close => close.addEventListener('click', () => {
   modal.style.display = "none";
-});
+}));
 
 window.addEventListener('click', (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
   }
+});
+
+nextButton.addEventListener('click', () => {
+  modalContent.style.display = 'none';
+  modalPay.style.display = 'flex';
+});
+
+payButton.addEventListener('click', () => {
+    modal.style.display = "none";
+    alert("Thank you for your donation");
 });
