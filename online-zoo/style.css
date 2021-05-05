@@ -531,11 +531,60 @@
 }
 
 .pets-in-zoo__slides {
-  display: grid;
+  position: relative;
+  display: none;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
   row-gap: 30px;
   grid-area: slides;
+  animation: .5s ease-in-out;
+}
+
+.next,
+.active {
+  display: grid;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    opacity: 1;
+    left: 0;
+  }
+
+  to {
+    opacity: 0;
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    opacity: 0;
+    left: 100%;
+  }
+
+  to {
+    opacity: 1;
+    left: 0;
+  }
 }
 
 .pets-in-zoo__slide {
