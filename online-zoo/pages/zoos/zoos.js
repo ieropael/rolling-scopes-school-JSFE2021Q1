@@ -9,3 +9,13 @@ function toggleSpoiler(spoilerElement) {
 }
 
 infoBlock.forEach(block => block.addEventListener('click', event => toggleSpoiler(event.target.closest('.info__block'))));
+
+const changeVideoButton = document.querySelectorAll('.video__button');
+
+changeVideoButton.forEach(button => button.addEventListener('click', event => {
+  let mainVideo = document.querySelector('.video__main').querySelector('.video__iframe');
+  let otherVideo = event.target.parentNode.querySelector('.video__iframe');
+  let tempContent = mainVideo.outerHTML;
+  mainVideo.outerHTML = otherVideo.outerHTML;
+  otherVideo.outerHTML = tempContent;
+}));
