@@ -1519,13 +1519,16 @@
   height: 39px;
   text-align: center;
   border: 1px solid #9ca498;
+  outline: none;
   -moz-appearance: textfield;
 }
 
 .card__number::-webkit-outer-spin-button,
 .card__cardholder::-webkit-outer-spin-button,
 .card__number::-webkit-inner-spin-button,
-.card__cardholder::-webkit-inner-spin-button {
+.card__cardholder::-webkit-inner-spin-button,
+.card__cvc::-webkit-inner-spin-button,
+.card__cvc::-webkit-inner-spin-button {
   margin: 0;
   -webkit-appearance: none;
 }
@@ -1542,6 +1545,7 @@
   width: 80px;
   text-align: center;
   border: 1px solid #9ca498;
+  outline: none;
   -moz-appearance: textfield;
 }
 
@@ -1585,6 +1589,8 @@
   height: 35px;
   text-align: center;
   border: 1px solid #9ca498;
+  outline: none;
+  -moz-appearance: textfield;
 }
 
 .modal__pay-button {
