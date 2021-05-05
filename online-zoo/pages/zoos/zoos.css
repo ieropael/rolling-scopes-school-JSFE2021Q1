@@ -297,7 +297,7 @@
 .info__block{
   padding: 20px;
   width: 570px;
-  height: 142px;
+  height: 61px;
   display: flex;
   justify-content: space-between;
   background-color: #a7e1ff;
@@ -317,6 +317,19 @@
 
 .info__text {
   line-height: 19px;
+  display: none;
+}
+
+.block-expanded {
+  height: 142px;
+}
+
+.text-expanded {
+  display: inline;
+}
+
+.button-expanded {
+  transform: rotate(180deg);
 }
 
 .info__button {
