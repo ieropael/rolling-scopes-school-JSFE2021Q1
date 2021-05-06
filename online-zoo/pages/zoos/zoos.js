@@ -19,3 +19,34 @@ changeVideoButton.forEach(button => button.addEventListener('click', event => {
   mainVideo.outerHTML = otherVideo.outerHTML;
   otherVideo.outerHTML = tempContent;
 }));
+
+
+const items = document.querySelectorAll('.video__player');
+let currentItem = 0;
+let forward = true;
+
+function nextItem(n) {
+  items[n].classList.remove('active');
+  items[n + 4].classList.add('active');
+}
+
+function prevItem(n) {
+  items[n].classList.add('active');
+  items[n + 4].classList.remove('active');
+}
+
+let autoCarousel = setInterval(function() {
+  if (currentItem + 4 > items.length - 1) {
+    forward = false;
+  }
+  if (currentItem == 0) {
+    forward = true;
+  }
+  if (forward) {
+    nextItem(currentItem);
+    currentItem++;
+  } else {
+    currentItem--;
+    prevItem(currentItem);
+  }
+}, 5000);
