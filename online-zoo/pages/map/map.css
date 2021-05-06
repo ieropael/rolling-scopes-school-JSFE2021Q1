@@ -156,6 +156,7 @@
 }
 
 .main {
+  padding-top: 100px;
   position: relative;
   width: 100%;
   height: 930px;
@@ -163,18 +164,20 @@
 }
 
 .map__wrapper {
-  padding-top: 100px;
+  width: 100%;
+  height: 745px;
   overflow: hidden;
 }
 
 .map {
   position: relative;
   width: 100%;
-  height: 745px;
+  height: 100%;
 }
 
 .map__image {
   width: 100%;
+  height: 100%;
 }
 
 .country {
@@ -274,23 +277,23 @@
 }
 
 .icon__eagle {
-  top: 396px;
-  left: 77px;
+  left: 7%;
+  top: 54%;
 }
 
 .icon__alligator {
-  top: 405px;
-  left: 300px;
+  top: 54%;
+  left: 27%;
 }
 
 .icon__gorilla {
-  top: 505px;
-  left: 655px;
+  top: 68%;
+  left: 56.5%;
 }
 
 .icon__panda {
-  top: 409px;
-  left: 922px;
+  top: 55%;
+  left: 79%;
 }
 
 .zoom {
@@ -298,8 +301,54 @@
   left: 100%;
   bottom: 20px;
   transform: translateX(-20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 80px;
+  border-radius: 5px;
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
   cursor: pointer;
+  background-color: #fff;
+}
+
+.zoom__minus {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid black;
+}
+
+.zoom__plus {
+  width: 100%;
+  height: 40px;
+}
+
+.minus-hor {
+  position: absolute;
+  top: 25%;
+  left: 31.25%;
+  width: 12px;
+  height: 2px;
+  background-color: #000;
+}
+
+.plus-hor {
+  position: absolute;
+  bottom: 25%;
+  left: 31.25%;
+  width: 12px;
+  height: 2px;
+  background-color: #000;
+}
+
+.plus-vert {
+  position: absolute;
+  bottom: 25%;
+  left: 31.25%;
+  width: 12px;
+  height: 2px;
+  background-color: #000;
+  transform: rotate(90deg);
 }
 
 .button {
@@ -549,10 +598,10 @@
     left: 1014px;
   }
   
-  .icon__eagle {
+  /* .icon__eagle {
     top: 393px;
     left: 94px;
-  }
+  } */
 
   .icon__alligator {
     top: 402px;
@@ -577,13 +626,13 @@
     margin-right: 36px;
   }
 
-  .map {
+  /* .map {
     height: 800px;
-  }
+  } */
 
-  .map__wrapper {
+  /* .map__wrapper {
     height: 800px;
-  }
+  } */
 
   .footer {
     height: 374px;
