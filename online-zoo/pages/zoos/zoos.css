@@ -244,6 +244,7 @@
   width: 275px;
   height: 155px;
   position: relative;
+  display: none;
 }
 
 .video__life {
@@ -893,4 +894,8 @@
     background-position: -5px -3%;
   }
   
+}
+
+.active {
+  display: block;
 }
