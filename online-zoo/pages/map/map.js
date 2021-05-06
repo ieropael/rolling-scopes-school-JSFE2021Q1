@@ -28,3 +28,42 @@ function zoomOut() {
 
 zoomPlus.addEventListener('click', () => zoomIn());
 zoomMinus.addEventListener('click', () => zoomOut());
+
+map.onmousedown = function(event) {
+  let windowWidth = document.documentElement.clientWidth;
+  let fixWidth = 0;
+  if (windowWidth > 1160) {
+    fixWidth = (windowWidth - 1160) / 2;
+  }
+
+  let shiftX = event.clientX - map.getBoundingClientRect().left;
+  let shiftY = event.clientY - map.getBoundingClientRect().top;
+
+  moveAt(event.pageX - fixWidth, event.pageY - 180);
+
+  function moveAt(pageX, pageY) {
+    map.style.left = pageX - shiftX + 'px';
+    map.style.top = pageY - shiftY + 'px';
+  }
+
+  function onMouseMove(event) {
+    moveAt(event.pageX - fixWidth, event.pageY - 180);
+  }
+
+  document.addEventListener('mousemove', onMouseMove);
+
+  document.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    map.onmouseup = null;
+  };
+
+  document.onmouseover = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    map.onmouseup = null;
+  };
+
+};
+
+map.ondragstart = function() {
+  return false;
+};
