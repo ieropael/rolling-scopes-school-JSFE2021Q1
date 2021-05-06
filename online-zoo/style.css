@@ -1409,8 +1409,10 @@
 .modal {
   display: none;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 10;
-  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;

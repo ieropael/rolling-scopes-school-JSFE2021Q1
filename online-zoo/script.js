@@ -91,7 +91,7 @@ function validateInput(field) {
 }
 
 donateButton.addEventListener('click', () => {
-  modal.style.display = 'block';
+  modal.style.display = 'flex';
   modalContent.style.display = 'flex';
   modalPay.style.display = 'none';
 });
