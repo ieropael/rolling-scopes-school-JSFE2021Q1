@@ -502,6 +502,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -517,7 +518,6 @@
 
 .arrow:hover {
   background-color: #fddc62;
-  transform: scale(1.2);
 }
 
 .arrow_left {
