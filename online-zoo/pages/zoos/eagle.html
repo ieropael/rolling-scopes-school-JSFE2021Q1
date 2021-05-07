@@ -49,7 +49,7 @@
       <h2 class="title">Eagle</h2>
       <section class="video">
         <div class="video__main">
-          <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/RmmAzrAkKqI" title="YouTube video player" frameborder="0"
+          <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/RmmAzrAkKqI?controls=0" title="YouTube video player" frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="feed__button button">
@@ -57,31 +57,43 @@
         </div>
         <div class="video__other">
           <div class="video__player active">
-            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/RmmAzrAkKqI" title="YouTube video player" frameborder="0"
+            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/hTfbB02IRLQ?controls=0" title="YouTube video player" frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="video__button"></div>
             <span class="video__life">Life</span>
           </div>
           <div class="video__player active">
-            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/RmmAzrAkKqI" title="YouTube video player" frameborder="0"
+            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/7utMaDb1W08?controls=0" title="YouTube video player" frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="video__button"></div>
             <span class="video__life">Life</span>
           </div>
           <div class="video__player active">
-            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/RmmAzrAkKqI" title="YouTube video player" frameborder="0"
+            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/XfoUF8YkB7A?controls=0" title="YouTube video player" frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="video__button"></div>
             <span class="video__life">Life</span>
           </div>
           <div class="video__player active">
-            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/RmmAzrAkKqI" title="YouTube video player" frameborder="0"
+            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/eTAsANPVqB8?controls=0" title="YouTube video player" frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="video__button"></div>
             <span class="video__life">Life</span>
           </div>
           <div class="video__player">
-            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/RmmAzrAkKqI" title="YouTube video player" frameborder="0"
+            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/SOo4wwavdLc?controls=0" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video__button"></div>
+            <span class="video__life">Life</span>
+          </div>
+          <div class="video__player">
+            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/dO3sHNbWsZo?controls=0" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video__button"></div>
+            <span class="video__life">Life</span>
+          </div>
+          <div class="video__player">
+            <iframe class="video__iframe" width="100%" height="100%" src="https://www.youtube.com/embed/-CVZT7aOcJs?controls=0" title="YouTube video player" frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="video__button"></div>
             <span class="video__life">Life</span>
@@ -207,6 +219,46 @@
       </div>
     </div>
   </footer>
+  <div class="modal">
+    <div class="modal__content">
+      <span class="modal__close"></span>
+      <select class="modal__select">
+        <option class="modal__select-alligator" value="Alligator">Alligator</option>
+        <option class="modal__select-panda" value="Panda">Panda</option>
+        <option class="modal__select-eagle" value="Eagle" selected>Eagle</option>
+        <option class="modal__select-gorilla" value="Gorilla">Gorilla</option>
+      </select>
+      <div class="modal__donate">
+        <input class="modal__amount input-field" type="number" min="1" max="9999" placeholder="Amount" onkeypress="return isNumeric(event)" required>
+        <select class="modal__currency">
+          <option value="USD" class="dollar">USD</option>
+          <option value="EUR" class="euro">EUR</option>
+        </select>
+      </div>
+      <textarea class="modal__text" name="modal-text" maxlength="280" placeholder="Type your text here"></textarea>
+      <button class="modal__button button">Next</button>
+    </div>
+    <div class="modal__pay">
+      <span class="modal__close"></span>
+      <div class="card__front">
+        <input class="card__number input-field" type="number" placeholder="Card Number" max="9999999999999999" onkeypress="return isNumeric(event)" required>
+        <form class="card__date" name="card-date">
+          <input class="card__month input-field" type="number" placeholder="MM" max="12" onkeypress="return isNumeric(event)" required>
+          <input class="card__year input-field" type="number" placeholder="YY" max="99" onkeypress="return isNumeric(event)" required>
+        </form>
+        <input class="card__cardholder input-field" type="text" placeholder="Cardholder Name" required>
+      </div>
+      <div class="card__reverse">
+        <div class="card__reverse-wide-line"></div>
+        <div class="card__reverse-line"></div>
+        <div class="card__reverse-line"></div>
+        <div class="card__reverse-line"></div>
+        <div class="card__reverse-line"></div>
+        <input class="card__cvc input-field" type="number" placeholder="CVC" max="999" onkeypress="return isNumeric(event)" required>
+      </div>
+      <button class="modal__pay-button button" type="submit">Donate</button>
+    </div>
+  </div>
   <script src="../../pages/zoos/zoos.js"></script>
 </body>
 </html>
