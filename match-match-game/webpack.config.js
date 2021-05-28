@@ -49,7 +49,8 @@ module.exports = ({develop}) => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'match-match-game',
+      // title: 'match-match-game',
+      template: './src/index.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
