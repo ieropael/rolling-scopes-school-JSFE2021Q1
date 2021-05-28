@@ -47,7 +47,7 @@
 
 .card__back {
   background-color: grey;
-  background-image: url('./assets/card-back.jpg');
+  background-image: url('../../assets/card-back.jpg');
   background-position: center;
   background-size: cover;
   transform: rotateY(180deg);
