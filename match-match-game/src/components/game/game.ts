@@ -18,7 +18,7 @@ export class Game extends BaseComponent {
     this.element.appendChild(this.cardsField.element);
   }
 
-  initGame(images: string[]): void {
+  newGame(images: string[]): void {
     this.cardsField.clear();
 
     const cards: Card[] = images.concat(images).map((url: string) => new Card(url)).sort(() => Math.random() - 0.5);
