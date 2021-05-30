@@ -17,12 +17,12 @@ export class Card extends BaseComponent {
     `;
   }
 
-  flipToBack() {
+  flipToBack(): Promise<void> {
     this.isFlipped = true;
     return this.flip(true);
   }
 
-  flipToFront() {
+  flipToFront(): Promise<void> {
     this.isFlipped = false;
     return this.flip();
   }

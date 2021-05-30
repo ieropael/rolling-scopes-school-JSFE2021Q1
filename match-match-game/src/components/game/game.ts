@@ -28,7 +28,7 @@ export class Game extends BaseComponent {
     this.cardsField.addCards(cards);
   }
 
-  private async cardHandler(card: Card) {
+  private async cardHandler(card: Card): Promise<void> {
     if (this.isAnimation) {
       return;
     }
