@@ -42,7 +42,10 @@
 }
 
 .card__front {
-  background-color: crimson;
+  background-color: #ccc;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .card__back {
