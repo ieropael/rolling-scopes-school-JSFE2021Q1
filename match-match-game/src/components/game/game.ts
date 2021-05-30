@@ -32,11 +32,18 @@ export class Game extends BaseComponent {
     if (this.isAnimation) {
       return;
     }
+
+    if (!card.isFlipped) {
+      return;
+    }
+
     this.isAnimation = true;
+
     await card.flipToFront();
 
     if (!this.activeCard) {
       this.activeCard = card;
+      this.isAnimation = false;
       return;
     }
 
