@@ -5,5 +5,5 @@ window.onload = () => {
   const appElement = document.getElementById('app');
 
   if (!appElement) throw Error('App root element not found');
-  return new App(appElement);
+  new App(appElement).start();
 };
