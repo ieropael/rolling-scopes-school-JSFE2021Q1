@@ -29,7 +29,7 @@ export class Card extends BaseComponent {
 
   private flip(isFront = false): Promise<void> {
     return new Promise((resolve) => {
-      this.element.classList.toggle(FLIP_CLASS, !isFront);
+      this.element.classList.toggle(FLIP_CLASS, isFront);
       this.element.addEventListener('transitionend', () => resolve(), {
         once: true,
       });
