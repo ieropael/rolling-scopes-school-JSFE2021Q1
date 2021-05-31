@@ -2,7 +2,7 @@ import Page from '../../core/templates/page';
 
 export default class StatisticsPage extends Page {
   static textObject = {
-    MainTitle: 'Settings Page',
+    MainTitle: 'Statistics Page',
   };
 
   render(): HTMLElement {
