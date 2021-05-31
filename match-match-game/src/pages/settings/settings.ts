@@ -1,4 +1,4 @@
-import Page from '../../core/templates/page';
+import Page from '../../templates/page';
 
 export default class SettingsPage extends Page {
   static textObject = {

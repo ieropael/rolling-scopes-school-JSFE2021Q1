@@ -1,4 +1,4 @@
-import Page from '../../core/templates/page';
+import Page from '../../templates/page';
 
 export default class MainPage extends Page {
   static textObject = {

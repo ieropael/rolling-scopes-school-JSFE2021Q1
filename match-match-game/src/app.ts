@@ -1,9 +1,11 @@
 // import { Game } from './components/game/game';
 // import { ImageCategoryModel } from './models/image-category-model';
-import Page from './core/templates/page';
+import Page from './templates/page';
+import Header from './components/header/header';
 import MainPage from './pages/main/main';
 import SettingsPage from './pages/settings/settings';
 import StatisticsPage from './pages/statistics/statistics';
+import { PageIDs } from './shared/page-ids';
 
 export default class App {
   // private readonly game: Game;
@@ -21,43 +23,50 @@ export default class App {
   //   this.game.newGame(images);
   // }
 
-  private container: HTMLElement;
+  private static container: HTMLElement = document.body;
 
-  private initialPage: MainPage;
+  private static defaultPageID = 'current-page';
+
+  private window = window;
+
+  private header: Header;
 
   static renderNewPage(idPage: string): void {
-    document.body.innerHTML = '';
+    const currentPageHTML = document.querySelector(`#${App.defaultPageID}`);
+    if (currentPageHTML) {
+      currentPageHTML.remove();
+    }
     let page: Page | null = null;
 
-    if (idPage === 'main-page') {
+    if (idPage === PageIDs.Main) {
       page = new MainPage(idPage);
-    } else if (idPage === 'settings-page') {
+    } else if (idPage === PageIDs.Settings) {
       page = new SettingsPage(idPage);
-    } else if (idPage === 'statistics-page') {
+    } else if (idPage === PageIDs.Statistics) {
       page = new StatisticsPage(idPage);
     }
 
     if (page) {
       const pageHTML = page.render();
-      document.body.append(pageHTML);
+      pageHTML.id = App.defaultPageID;
+      App.container.append(pageHTML);
     }
   }
 
   private enableRouteChange() {
-    window.addEventListener('hashchange', () => {
+    this.window.addEventListener('hashchange', () => {
       const hash = window.location.hash.slice(1);
-      console.log('hashchange', hash);
       App.renderNewPage(hash);
     });
   }
 
   constructor() {
-    this.container = document.body;
-    this.initialPage = new MainPage('main-page');
+    this.header = new Header();
   }
 
   run(): void {
-    App.renderNewPage('settings-page');
+    App.container.append(this.header.render());
+    App.renderNewPage('main');
     this.enableRouteChange();
   }
 }
