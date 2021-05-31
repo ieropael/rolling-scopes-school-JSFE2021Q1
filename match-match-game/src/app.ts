@@ -1,11 +1,9 @@
 // import { Game } from './components/game/game';
 // import { ImageCategoryModel } from './models/image-category-model';
-// import MainPage from './pages/main/main';
 import Page from './core/templates/page';
 import MainPage from './pages/main/main';
 import SettingsPage from './pages/settings/settings';
 import StatisticsPage from './pages/statistics/statistics';
-// import SettingsPage from './pages/settings/settings';
 
 export default class App {
   // private readonly game: Game;
@@ -45,12 +43,21 @@ export default class App {
     }
   }
 
+  private enableRouteChange() {
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.slice(1);
+      console.log('hashchange', hash);
+      App.renderNewPage(hash);
+    });
+  }
+
   constructor() {
     this.container = document.body;
     this.initialPage = new MainPage('main-page');
   }
 
   run(): void {
-    App.renderNewPage('main-page');
+    App.renderNewPage('settings-page');
+    this.enableRouteChange();
   }
 }
