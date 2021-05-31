@@ -1,5 +1,5 @@
 export const enum PageIDs {
-  Main = 'main',
+  AboutGame = 'about',
   Settings = 'settings',
   Statistics = 'statistics',
 }

@@ -1,0 +1,122 @@
+#app > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E5E5E5;
+  height: 100vh;
+}
+
+.about-game__content {
+  width: 1000px;
+  height: 802px;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding-top: 28px;
+  padding-left: 36px;
+}
+
+.how-to-play {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 20px;
+}
+
+.register__info {
+  display: flex;
+  width: 360px;
+  height: 230px;
+  background-color: #fff;
+  padding-top: 16px;
+  padding-left: 16px;
+  margin-bottom: 16px;
+}
+
+.register__number {
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  line-height: 21px;
+  letter-spacing: 0.25px;
+  margin-right: 16px;
+}
+
+.register__text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.configure__info {
+  display: flex;
+  width: 360px;
+  height: 132px;
+  background-color: #fff;
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+.configure__number {
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  line-height: 21px;
+  letter-spacing: 0.25px;
+  margin-right: 16px;
+}
+
+.configure__text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.start__info {
+  display: flex;
+  width: 360px;
+  height: 132px;
+  background-color: #fff;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.start__number {
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  line-height: 21px;
+  letter-spacing: 0.25px;
+  margin-right: 16px;
+}
+
+.start__text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.6);
+}

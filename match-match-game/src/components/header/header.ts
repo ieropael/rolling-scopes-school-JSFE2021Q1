@@ -4,8 +4,8 @@ import { PageIDs } from '../../shared/page-ids';
 
 const Buttons = [
   {
-    id: PageIDs.Main,
-    text: 'Main Page',
+    id: PageIDs.AboutGame,
+    text: 'About Game',
   },
   {
     id: PageIDs.Settings,

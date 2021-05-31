@@ -38,7 +38,7 @@ export default class App {
     }
     let page: Page | null = null;
 
-    if (idPage === PageIDs.Main) {
+    if (idPage === PageIDs.AboutGame) {
       page = new MainPage(idPage);
     } else if (idPage === PageIDs.Settings) {
       page = new SettingsPage(idPage);

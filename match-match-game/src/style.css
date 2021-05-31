@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -10,11 +11,4 @@ html {
 body {
   min-height: 100vh;
   color: #fff;
-  background-color: #E5E5E5;
-}
-
-#app > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

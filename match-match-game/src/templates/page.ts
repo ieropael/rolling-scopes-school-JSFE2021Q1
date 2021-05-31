@@ -7,12 +7,12 @@ export default abstract class Page {
 
   constructor(id: string) {
     this.container = document.createElement('div');
-    this.headerTitle = document.createElement('h1');
+    this.headerTitle = document.createElement('div');
     this.container.id = id;
   }
 
   protected createHeaderTitle(text: string): HTMLHeadingElement {
-    this.headerTitle.innerText = text;
+    this.headerTitle.innerHTML = text;
     return this.headerTitle;
   }
 
