@@ -1,5 +1,5 @@
 import './style.css';
-import { App } from './app';
+import App from './app';
 
 // window.onload = () => {
 //   const appElement = document.getElementById('app');

@@ -1,8 +1,10 @@
 // import { Game } from './components/game/game';
 // import { ImageCategoryModel } from './models/image-category-model';
-import { MainPage } from './pages/main/main';
+// import MainPage from './pages/main/main';
+import MainPage from './pages/main/main';
+// import SettingsPage from './pages/settings/settings';
 
-export class App {
+export default class App {
   // private readonly game: Game;
 
   // constructor(private readonly rootElement: HTMLElement) {

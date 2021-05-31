@@ -1,12 +1,12 @@
 import Page from '../../core/templates/page';
 
-export default class MainPage extends Page {
+export default class SettingsPage extends Page {
   static textObject = {
-    MainTitle: 'Main Page',
+    MainTitle: 'Settings Page',
   };
 
   render(): HTMLElement {
-    const title = this.createHeaderTitle(MainPage.textObject.MainTitle);
+    const title = this.createHeaderTitle(SettingsPage.textObject.MainTitle);
     this.container.append(title);
     return this.container;
   }
