@@ -9,11 +9,8 @@ html {
 
 body {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #fff;
-  background-color: darkslategray;
+  background-color: #E5E5E5;
 }
 
 #app > div {

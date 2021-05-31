@@ -1,3 +1,4 @@
+import './header.css';
 import { BaseComponent } from '../base-component';
 import { PageIDs } from '../../shared/page-ids';
 
@@ -22,12 +23,20 @@ export default class Header extends BaseComponent {
 
   renderPageButtons(): void {
     const pageButtons = document.createElement('div');
+    pageButtons.classList.add('page-buttons');
     Buttons.forEach((button) => {
       const buttonHTML = document.createElement('a');
+      buttonHTML.classList.add('button');
       buttonHTML.href = `#${button.id}`;
       buttonHTML.innerText = button.text;
       pageButtons.append(buttonHTML);
     });
+    this.element.innerHTML = `
+    <div class="logo">
+      <div class="logo-top">match</div>
+      <div class="logo-bottom">match</div>
+    </div>
+    `;
     this.element.append(pageButtons);
   }
 
