@@ -19,6 +19,10 @@ export class Game extends BaseComponent {
 
   private countTime = 0;
 
+  private countTries = 0;
+
+  private countWrongTries = 0;
+
   constructor() {
     super();
     this.element.appendChild(this.timer);
@@ -34,6 +38,11 @@ export class Game extends BaseComponent {
         this.timer.innerText = String(this.countTime++);
       }, 1000);
     }, 3000);
+  }
+
+  countResult(): number {
+    const result = (this.countTries - this.countWrongTries) * 100 - this.countTime * 10;
+    return result > 0 ? result : 0;
   }
 
   newGame(images: string[]): void {
@@ -70,14 +79,21 @@ export class Game extends BaseComponent {
     if (this.activeCard.image !== card.image) {
       this.activeCard.element.firstElementChild?.firstElementChild?.classList.add('wrong');
       card.element.firstElementChild?.firstElementChild?.classList.add('wrong');
+
+      this.countTries++;
+      this.countWrongTries++;
+
       await delay(FLIP_DELAY);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
     } else {
       this.activeCard.element.firstElementChild?.firstElementChild?.classList.add('right');
       card.element.firstElementChild?.firstElementChild?.classList.add('right');
+
+      this.countTries++;
+
       this.counter++;
       if (this.counter >= this.cardsField.cards.length / 2) {
-        alert('Congratulations!');
+        alert(`Congratulations! Your result is ${this.countResult()} points!`);
       }
     }
 
