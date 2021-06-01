@@ -48,6 +48,8 @@ export class Game extends BaseComponent {
     }
 
     if (this.activeCard.image !== card.image) {
+      this.activeCard.element.firstElementChild?.firstElementChild?.classList.add('wrong');
+      card.element.firstElementChild?.firstElementChild?.classList.add('wrong');
       await delay(FLIP_DELAY);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
     }

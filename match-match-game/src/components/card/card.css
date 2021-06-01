@@ -55,3 +55,7 @@
   background-size: cover;
   transform: rotateY(180deg);
 }
+
+.wrong {
+  background-color: rgba(242, 78, 30, 0.5);
+}
