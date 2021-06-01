@@ -65,9 +65,11 @@ export default class Header extends BaseComponent {
       </form>
     `;
 
-    playButton.addEventListener('click', () => {
+    function listener() {
       modal.style.display = 'flex';
-    });
+    }
+
+    playButton.addEventListener('click', listener);
 
     window.addEventListener('click', (event) => {
       if (event.target === modal) {
@@ -82,9 +84,8 @@ export default class Header extends BaseComponent {
     registerButton?.addEventListener('click', () => {
       // const user = new User(firstNameInput?.value, lastNameInput?.value, eMailInput?.value);
       playButton.innerText = 'start game';
-      playButton.removeEventListener('click', () => {
-        modal.style.display = 'flex';
-      });
+      playButton.removeEventListener('click', listener);
+      playButton.href = '#play';
     });
 
     function validate(value: string) {

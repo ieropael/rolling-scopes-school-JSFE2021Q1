@@ -1,28 +1,12 @@
-// import { Game } from './components/game/game';
-// import { ImageCategoryModel } from './models/image-category-model';
 import Page from './templates/page';
 import Header from './components/header/header';
 import MainPage from './pages/main/main';
 import SettingsPage from './pages/settings/settings';
 import StatisticsPage from './pages/statistics/statistics';
+import { Play } from './pages/play/play';
 import { PageIDs } from './shared/page-ids';
 
 export default class App {
-  // private readonly game: Game;
-
-  // constructor(private readonly rootElement: HTMLElement) {
-  //   this.game = new Game();
-  //   this.rootElement.appendChild(this.game.element);
-  // }
-
-  // async start(): Promise<void> {
-  //   const res = await fetch('./images.json');
-  //   const categories: ImageCategoryModel[] = await res.json();
-  //   const cat = categories[0];
-  //   const images = cat.images.map((name) => `${cat.category}/${name}`);
-  //   this.game.newGame(images);
-  // }
-
   private static container: HTMLElement = document.body;
 
   private static defaultPageID = 'current-page';
@@ -44,6 +28,8 @@ export default class App {
       page = new SettingsPage(idPage);
     } else if (idPage === PageIDs.Statistics) {
       page = new StatisticsPage(idPage);
+    } else if (idPage === PageIDs.Play) {
+      new Play(document.body).start();
     }
 
     if (page) {
@@ -66,7 +52,7 @@ export default class App {
 
   run(): void {
     App.container.append(this.header.render());
-    App.renderNewPage('main');
+    App.renderNewPage('about');
     this.enableRouteChange();
   }
 }
