@@ -3,7 +3,7 @@ import Page from '../../templates/page';
 
 export default class MainPage extends Page {
   static textObject = {
-    MainTitle: `<div class="about-game">
+    MainContent: `<div class="about-game">
     <div class="about-game__content">
       <h2 class="how-to-play">How to play?</h2>
       <div class="register">
@@ -34,7 +34,7 @@ export default class MainPage extends Page {
   };
 
   render(): HTMLElement {
-    const title = this.createHeaderTitle(MainPage.textObject.MainTitle);
+    const title = this.createContent(MainPage.textObject.MainContent);
     this.container.append(title);
     return this.container;
   }

@@ -1,19 +1,19 @@
 export default abstract class Page {
   protected container: HTMLElement;
 
-  private headerTitle: HTMLHeadingElement;
+  private content: HTMLElement;
 
   static textObject = {};
 
   constructor(id: string) {
     this.container = document.createElement('div');
-    this.headerTitle = document.createElement('div');
+    this.content = document.createElement('div');
     this.container.id = id;
   }
 
-  protected createHeaderTitle(text: string): HTMLHeadingElement {
-    this.headerTitle.innerHTML = text;
-    return this.headerTitle;
+  protected createContent(text: string): HTMLElement {
+    this.content.innerHTML = text;
+    return this.content;
   }
 
   render(): HTMLElement {

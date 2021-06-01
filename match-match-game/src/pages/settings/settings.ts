@@ -2,11 +2,11 @@ import Page from '../../templates/page';
 
 export default class SettingsPage extends Page {
   static textObject = {
-    MainTitle: 'Settings Page',
+    MainContent: 'Settings Page',
   };
 
   render(): HTMLElement {
-    const title = this.createHeaderTitle(SettingsPage.textObject.MainTitle);
+    const title = this.createContent(SettingsPage.textObject.MainContent);
     this.container.append(title);
     return this.container;
   }
