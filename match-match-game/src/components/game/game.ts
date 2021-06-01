@@ -12,6 +12,8 @@ export class Game extends BaseComponent {
 
   private isAnimation = false;
 
+  private counter = 0;
+
   constructor() {
     super();
     this.cardsField = new CardsField();
@@ -55,6 +57,10 @@ export class Game extends BaseComponent {
     } else {
       this.activeCard.element.firstElementChild?.firstElementChild?.classList.add('right');
       card.element.firstElementChild?.firstElementChild?.classList.add('right');
+      this.counter++;
+      if (this.counter >= this.cardsField.cards.length / 2) {
+        alert('Congratulations!');
+      }
     }
 
     this.activeCard = undefined;
