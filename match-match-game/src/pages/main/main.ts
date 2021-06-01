@@ -3,7 +3,13 @@ import Page from '../../templates/page';
 
 export default class MainPage extends Page {
   static textObject = {
-    MainContent: `<div class="about-game">
+    MainContent: `<h3>Уважаемый проверяющий! Пожалуйста, проверьте моё приложение немного позднее. 
+    Последние пару недель завал на работе, из-за чего нормально доделать приложение не удалось. 
+    Но я постараюсь приложить максимум усилий, чтобы в ближайшее время всё закончить. 
+    Хоть сейчас всё и выглядит ужасно, но осталось совсем немного. :) 
+    Надеюсь на Ваше понимание. Заранее, спасибо! Контакты для связи: 
+    Discord: ieropael#1569, Telegram: @ieropael</h3>
+    <div class="about-game">
     <div class="about-game__content">
       <h2 class="how-to-play">How to play?</h2>
       <div class="register">

@@ -13,7 +13,7 @@ export class Play {
   async start(): Promise<void> {
     const res = await fetch('./images.json');
     const categories: ImageCategoryModel[] = await res.json();
-    const cat = categories[0];
+    const cat = categories[1];
     const images = cat.images.map((name) => `${cat.category}/${name}`);
     this.game.newGame(images);
   }

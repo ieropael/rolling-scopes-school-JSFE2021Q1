@@ -5,9 +5,45 @@
       "alexstrasza.png",
       "deathwing.png",
       "malygos.png",
-      "ysera.png",
-      "nozdormu.png",
-      "onyxia.png"
+      "cthun.png",
+      "geddon.png",
+      "kaelthas.png",
+      "kelthuzad.png",
+      "magtheridon.png"
+    ]
+  },
+  {
+    "category": "animals",
+    "images": [
+      "001-elephant.svg",
+      "002-snake.svg",
+      "003-hippo.svg",
+      "004-turtle.svg",
+      "005-parrot.svg",
+      "006-panda.svg",
+      "007-boar.svg",
+      "008-giraffe.svg"
+    ]
+  },
+  {
+    "category": "animals",
+    "images": [
+      "001-elephant.svg",
+      "002-snake.svg",
+      "003-hippo.svg",
+      "004-turtle.svg",
+      "005-parrot.svg",
+      "006-panda.svg",
+      "007-boar.svg",
+      "008-giraffe.svg",
+      "009-squid.svg",
+      "010-rhino.svg",
+      "011-deer.svg",
+      "012-stingray.svg",
+      "013-beetle.svg",
+      "014-shark.svg",
+      "015-walrus.svg",
+      "016-bat.svg"
     ]
   }
 ]

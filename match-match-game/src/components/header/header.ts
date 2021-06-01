@@ -69,7 +69,8 @@ export default class Header extends BaseComponent {
       modal.style.display = 'flex';
     }
 
-    playButton.addEventListener('click', listener);
+    // playButton.addEventListener('click', listener);
+    playButton.href = '#play';
 
     window.addEventListener('click', (event) => {
       if (event.target === modal) {

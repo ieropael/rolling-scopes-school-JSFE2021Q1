@@ -13,8 +13,6 @@
 }
 
 .about-game__content {
-  width: 1000px;
-  height: 802px;
   background-color: rgba(0, 0, 0, 0.05);
   padding-top: 28px;
   padding-left: 36px;
@@ -119,4 +117,8 @@
   line-height: 20px;
   letter-spacing: 0.25px;
   color: rgba(0, 0, 0, 0.6);
+}
+
+h3 {
+  color: #000;
 }
