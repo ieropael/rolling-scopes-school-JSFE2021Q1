@@ -52,6 +52,9 @@ export class Game extends BaseComponent {
       card.element.firstElementChild?.firstElementChild?.classList.add('wrong');
       await delay(FLIP_DELAY);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
+    } else {
+      this.activeCard.element.firstElementChild?.firstElementChild?.classList.add('right');
+      card.element.firstElementChild?.firstElementChild?.classList.add('right');
     }
 
     this.activeCard = undefined;
