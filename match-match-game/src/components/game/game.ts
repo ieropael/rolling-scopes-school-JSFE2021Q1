@@ -2,6 +2,7 @@ import { BaseComponent } from '../base-component';
 import { Card } from '../card/card';
 import { CardsField } from '../cards-field/cards-field';
 import { delay } from '../../shared/delay';
+import './game.css';
 
 const FLIP_DELAY = 3000;
 
@@ -14,10 +15,25 @@ export class Game extends BaseComponent {
 
   private counter = 0;
 
+  private timer = document.createElement('div');
+
+  private countTime = 0;
+
   constructor() {
     super();
+    this.element.appendChild(this.timer);
     this.cardsField = new CardsField();
     this.element.appendChild(this.cardsField.element);
+    this.timer.classList.add('timer');
+    this.timer.innerText = String(this.countTime);
+  }
+
+  addTimer(): void {
+    setTimeout(() => {
+      setInterval(() => {
+        this.timer.innerText = String(this.countTime++);
+      }, 1000);
+    }, 3000);
   }
 
   newGame(images: string[]): void {
@@ -28,6 +44,8 @@ export class Game extends BaseComponent {
     cards.forEach((card) => card.element.addEventListener('click', () => this.cardHandler(card)));
 
     this.cardsField.addCards(cards);
+
+    this.addTimer();
   }
 
   private async cardHandler(card: Card): Promise<void> {
