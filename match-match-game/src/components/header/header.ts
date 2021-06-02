@@ -1,7 +1,7 @@
 import './header.css';
 import { BaseComponent } from '../base-component';
 import { PageIDs } from '../../shared/page-ids';
-// import { User } from '../../models/user';
+import { User } from '../../models/user';
 
 const Buttons = [
   {
@@ -69,8 +69,8 @@ export default class Header extends BaseComponent {
       modal.style.display = 'flex';
     }
 
-    // playButton.addEventListener('click', listener);
-    playButton.href = '#play';
+    playButton.addEventListener('click', listener);
+    // playButton.href = '#play';
 
     window.addEventListener('click', (event) => {
       if (event.target === modal) {
@@ -83,7 +83,26 @@ export default class Header extends BaseComponent {
     const lastNameInput: HTMLFormElement | null = document.querySelector('.lastname');
     const eMailInput: HTMLFormElement | null = document.querySelector('.e-mail');
     registerButton?.addEventListener('click', () => {
-      // const user = new User(firstNameInput?.value, lastNameInput?.value, eMailInput?.value);
+      const user = new User(firstNameInput?.value, lastNameInput?.value, eMailInput?.value);
+      const iDB = window.indexedDB;
+
+      let database = null;
+
+      const openRequest = iDB.open('testdb');
+      openRequest.onupgradeneeded = () => {
+        database = openRequest.result;
+        const store = database.createObjectStore('testCollection', { keyPath: 'id', autoIncrement: true });
+        store.createIndex('firstname', 'firstname');
+        store.createIndex('lastname', 'lastname');
+        store.createIndex('email', 'email', { unique: true });
+      };
+
+      openRequest.onsuccess = () => {
+        database = openRequest.result;
+        const transaction = database.transaction('testCollection', 'readwrite');
+        const store = transaction.objectStore('testCollection');
+        store.add({ firstname: user.firstname, lastname: user.lastname, email: user.email });
+      };
       playButton.innerText = 'start game';
       playButton.removeEventListener('click', listener);
       playButton.href = '#play';
