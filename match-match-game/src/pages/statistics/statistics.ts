@@ -35,18 +35,23 @@ export default class StatisticsPage extends Page {
           tbl.style.border = '1px solid black';
           for (let i = 0; i < result.result.length; i++) {
             const tr = tbl.insertRow();
-            for (let j = 0; j < 4; j++) {
+            for (let j = 0; j < 5; j++) {
               const td = tr.insertCell();
               if (j === 0) {
-                td.appendChild(document.createTextNode(result.result[i].firstname));
+                const image = td.appendChild(document.createElement('img'));
+                image.src = result.result[i].avatar;
+                image.classList.add('avatar-image');
               }
               if (j === 1) {
-                td.appendChild(document.createTextNode(result.result[i].lastname));
+                td.appendChild(document.createTextNode(result.result[i].firstname));
               }
               if (j === 2) {
-                td.appendChild(document.createTextNode(result.result[i].email));
+                td.appendChild(document.createTextNode(result.result[i].lastname));
               }
               if (j === 3) {
+                td.appendChild(document.createTextNode(result.result[i].email));
+              }
+              if (j === 4) {
                 td.appendChild(document.createTextNode(result.result[i].score));
               }
               td.style.border = '1px solid black';

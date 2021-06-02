@@ -62,7 +62,8 @@ export default class Header extends BaseComponent {
         <input type="text" class="lastname" maxlength="30" required></input>
         <span>E-Mail *</span>
         <input type="text" class="e-mail" maxlength="30" required></input>
-        <button class='register-button'>Submit</button>
+        <input type="file" class="avatar"></input>
+        <button class="register-button" type="button">Submit</button>
       </form>
     `;
 
@@ -83,10 +84,22 @@ export default class Header extends BaseComponent {
     const firstNameInput: HTMLFormElement | null = document.querySelector('.firstname');
     const lastNameInput: HTMLFormElement | null = document.querySelector('.lastname');
     const eMailInput: HTMLFormElement | null = document.querySelector('.e-mail');
+    const avatarInput: HTMLFormElement | null = document.querySelector('.avatar');
     registerButton?.addEventListener('click', () => {
       const user = new User(firstNameInput?.value, lastNameInput?.value, eMailInput?.value);
       Game.user = user;
 
+      const file = avatarInput?.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      let image = '';
+      reader.onload = () => {
+        image = <string>reader.result;
+        const avatar = document.createElement('img');
+        avatar.src = <string>reader.result;
+        avatar.classList.add('avatar-image');
+        this.element.append(avatar);
+      };
       const iDB = window.indexedDB;
 
       let database = null;
@@ -99,6 +112,7 @@ export default class Header extends BaseComponent {
         store.createIndex('lastname', 'lastname');
         store.createIndex('email', 'email');
         store.createIndex('score', 'score');
+        store.createIndex('avatar', 'avatar');
       };
 
       openRequest.onsuccess = () => {
@@ -106,7 +120,7 @@ export default class Header extends BaseComponent {
         const transaction = database.transaction('testCollection', 'readwrite');
         const store = transaction.objectStore('testCollection');
         store.add({
-          firstname: user.firstname, lastname: user.lastname, email: user.email, score: 0,
+          firstname: user.firstname, lastname: user.lastname, email: user.email, score: 0, avatar: image,
         });
         const result = store.getAll();
         transaction.oncomplete = () => {
@@ -132,7 +146,7 @@ export default class Header extends BaseComponent {
     }
 
     registerButton?.setAttribute('disabled', 'true');
-    if (firstNameInput && lastNameInput && eMailInput) {
+    if (firstNameInput && lastNameInput && eMailInput && avatarInput) {
       firstNameInput.addEventListener('input', () => {
         check(firstNameInput.value);
       });

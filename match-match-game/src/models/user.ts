@@ -9,9 +9,12 @@ export class User {
 
   id?: number;
 
-  constructor(firstname: string, lastname: string, email: string) {
+  avatar?: string;
+
+  constructor(firstname: string, lastname: string, email: string, avatar?: string) {
     this.firstname = firstname;
     this.lastname = lastname;
     this.email = email;
+    this.avatar = avatar;
   }
 }
