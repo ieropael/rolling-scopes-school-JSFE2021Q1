@@ -41,13 +41,13 @@ export default class App {
       const categoryFirstOption: HTMLOptionElement = document.createElement('option');
       const categorySecondOption: HTMLOptionElement = document.createElement('option');
       categoryFirstOption.innerText = 'animals';
-      categorySecondOption.innerText = 'hearthstone';
+      categorySecondOption.innerText = 'birds';
       if (category) {
         category.append(categorySelect);
         categorySelect.append(categoryFirstOption);
         categorySelect.append(categorySecondOption);
       }
-      categorySelect.addEventListener('change', () => localStorage.setItem('difficulty', categorySelect.value));
+      categorySelect.addEventListener('change', () => localStorage.setItem('category', categorySelect.value));
 
       const difficulty = document.querySelector('.difficulty');
       const difficultySelect: HTMLSelectElement = document.createElement('select');
