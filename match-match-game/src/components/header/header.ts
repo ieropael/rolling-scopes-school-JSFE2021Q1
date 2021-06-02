@@ -2,6 +2,7 @@ import './header.css';
 import { BaseComponent } from '../base-component';
 import { PageIDs } from '../../shared/page-ids';
 import { User } from '../../models/user';
+import { Game } from '../game/game';
 
 const Buttons = [
   {
@@ -84,6 +85,8 @@ export default class Header extends BaseComponent {
     const eMailInput: HTMLFormElement | null = document.querySelector('.e-mail');
     registerButton?.addEventListener('click', () => {
       const user = new User(firstNameInput?.value, lastNameInput?.value, eMailInput?.value);
+      Game.user = user;
+
       const iDB = window.indexedDB;
 
       let database = null;
@@ -94,14 +97,21 @@ export default class Header extends BaseComponent {
         const store = database.createObjectStore('testCollection', { keyPath: 'id', autoIncrement: true });
         store.createIndex('firstname', 'firstname');
         store.createIndex('lastname', 'lastname');
-        store.createIndex('email', 'email', { unique: true });
+        store.createIndex('email', 'email');
+        store.createIndex('score', 'score');
       };
 
       openRequest.onsuccess = () => {
         database = openRequest.result;
         const transaction = database.transaction('testCollection', 'readwrite');
         const store = transaction.objectStore('testCollection');
-        store.add({ firstname: user.firstname, lastname: user.lastname, email: user.email });
+        store.add({
+          firstname: user.firstname, lastname: user.lastname, email: user.email, score: 0,
+        });
+        const result = store.getAll();
+        transaction.oncomplete = () => {
+          user.id = result.result.find((el) => el.email === user.email).id;
+        };
       };
       playButton.innerText = 'start game';
       playButton.removeEventListener('click', listener);
