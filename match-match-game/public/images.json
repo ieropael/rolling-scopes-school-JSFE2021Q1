@@ -1,6 +1,7 @@
 [
   {
     "category": "hearthstone",
+    "difficulty": "1",
     "images": [
       "alexstrasza.png",
       "deathwing.png",
@@ -14,6 +15,7 @@
   },
   {
     "category": "animals",
+    "difficulty": "1",
     "images": [
       "001-elephant.svg",
       "002-snake.svg",
@@ -27,6 +29,7 @@
   },
   {
     "category": "animals",
+    "difficulty": "2",
     "images": [
       "001-elephant.svg",
       "002-snake.svg",
