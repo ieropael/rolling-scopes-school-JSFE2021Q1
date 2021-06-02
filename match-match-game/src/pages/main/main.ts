@@ -1,3 +1,6 @@
+import '../../assets/register.jpg';
+import '../../assets/settings.jpg';
+import '../../assets/game.jpg';
 import './main.css';
 import Page from '../../templates/page';
 
@@ -17,14 +20,14 @@ export default class MainPage extends Page {
           <div class="register__number">1</div>
           <div class="register__text">Register new player in game</div>
         </div>
-        <div class="register__example"></div>
+        <img class="register__example" src="../../assets/register.jpg">
       </div>
       <div class="configure">
         <div class="configure__info">
           <div class="register__number">2</div>
           <div class="register__text">Configure your game settings</div>
         </div>
-        <div class="configure__example"></div>
+        <img class="configure__example" src="../../assets/settings.jpg">
       </div>
       <div class="start">
         <div class="start__info">
@@ -32,7 +35,7 @@ export default class MainPage extends Page {
           <div class="register__text">Start you new game! Remember card<br>
           positions and match it before times up.</div>
         </div>
-        <div class="start__example"></div>
+        <img class="start__example" src="../../assets/game.jpg">
       </div>
     </div>
   </div>
