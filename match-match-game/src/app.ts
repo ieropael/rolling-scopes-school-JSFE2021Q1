@@ -1,7 +1,7 @@
 import Page from './templates/page';
 import Header from './components/header/header';
 import MainPage from './pages/main/main';
-import SettingsPage from './pages/settings/settings';
+import SettingsPage from './pages/settings/settings-page';
 import StatisticsPage from './pages/statistics/statistics';
 import { Play } from './pages/play/play';
 import { PageIDs } from './shared/page-ids';
@@ -36,6 +36,34 @@ export default class App {
       const pageHTML = page.render();
       pageHTML.id = App.defaultPageID;
       App.container.append(pageHTML);
+      const category = document.querySelector('.game-cards');
+      const categorySelect: HTMLSelectElement = document.createElement('select');
+      const categoryFirstOption: HTMLOptionElement = document.createElement('option');
+      const categorySecondOption: HTMLOptionElement = document.createElement('option');
+      categoryFirstOption.innerText = 'animals';
+      categorySecondOption.innerText = 'hearthstone';
+      if (category) {
+        category.append(categorySelect);
+        categorySelect.append(categoryFirstOption);
+        categorySelect.append(categorySecondOption);
+      }
+      categorySelect.addEventListener('change', () => localStorage.setItem('difficulty', categorySelect.value));
+
+      const difficulty = document.querySelector('.difficulty');
+      const difficultySelect: HTMLSelectElement = document.createElement('select');
+      const difficultyFirstOption: HTMLOptionElement = document.createElement('option');
+      const difficultySecondOption: HTMLOptionElement = document.createElement('option');
+      const difficultyThirdOption: HTMLOptionElement = document.createElement('option');
+      difficultyFirstOption.innerText = '4 x 4';
+      difficultySecondOption.innerText = '6 x 6';
+      difficultyThirdOption.innerText = '8 x 8';
+      if (difficulty) {
+        difficulty.append(difficultySelect);
+        difficultySelect.append(difficultyFirstOption);
+        difficultySelect.append(difficultySecondOption);
+        difficultySelect.append(difficultyThirdOption);
+      }
+      difficultySelect.addEventListener('change', () => localStorage.setItem('difficulty', difficultySelect.value));
     }
   }
 

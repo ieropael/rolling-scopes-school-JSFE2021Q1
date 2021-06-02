@@ -1,0 +1,23 @@
+.settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 47px;
+}
+
+.settings {
+  width: 1000px;
+  height: 252px;
+  background-color: #fff;
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
+  padding-top: 32px;
+  padding-left: 46px;
+}
+
+.game-cards {
+  margin-bottom: 54px;
+}
+
+select {
+  width: 210px;
+}
