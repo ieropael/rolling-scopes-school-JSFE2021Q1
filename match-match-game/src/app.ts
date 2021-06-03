@@ -63,6 +63,29 @@ export default class App {
         difficultySelect.append(difficultySecondOption);
         difficultySelect.append(difficultyThirdOption);
       }
+      const diffValue = localStorage.getItem('difficulty');
+      if (diffValue) {
+        if (diffValue === '4 x 4') {
+          difficultyFirstOption.selected = true;
+        }
+        if (diffValue === '6 x 6') {
+          difficultySecondOption.selected = true;
+        }
+        if (diffValue === '8 x 8') {
+          difficultyThirdOption.selected = true;
+        }
+      }
+
+      const catValue = localStorage.getItem('category');
+      if (catValue) {
+        if (catValue === 'animals') {
+          categoryFirstOption.selected = true;
+        }
+        if (catValue === 'birds') {
+          categorySecondOption.selected = true;
+        }
+      }
+
       difficultySelect.addEventListener('change', () => localStorage.setItem('difficulty', difficultySelect.value));
     }
   }
