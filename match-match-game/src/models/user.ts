@@ -16,5 +16,6 @@ export class User {
     this.lastname = lastname;
     this.email = email;
     this.avatar = avatar;
+    this.score = 0;
   }
 }

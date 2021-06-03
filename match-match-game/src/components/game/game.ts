@@ -43,9 +43,7 @@ export class Game extends BaseComponent {
     }, FLIP_DELAY);
   }
 
-  static getUser(score: number): void {
-    this.user.score = score;
-
+  static getUser(): void {
     const iDB = window.indexedDB;
 
     let database = null;
@@ -61,14 +59,38 @@ export class Game extends BaseComponent {
         lastname: this.user.lastname,
         email: this.user.email,
         score: this.user.score,
-        id: this.user.id,
+        avatar: this.user.avatar,
       });
     };
   }
 
-  countResult(): number {
+  countResult(): void {
     const result = (this.countTries - this.countWrongTries) * 100 - this.countTime * 10;
-    return result > 0 ? result : 0;
+    function checkScore() {
+      const iDB = window.indexedDB;
+      const score = result > 0 ? result : 0;
+
+      let database = null;
+
+      const openRequest = iDB.open('testdb');
+
+      openRequest.onsuccess = () => {
+        database = openRequest.result;
+        const transaction = database.transaction('testCollection', 'readwrite');
+        const store = transaction.objectStore('testCollection');
+        const request = store.getAll();
+        transaction.oncomplete = () => {
+          const checkUser = request.result.find((el) => el.email === Game.user.email);
+          if (score > checkUser.score) {
+            Game.user.score = score;
+          } else {
+            Game.user.score = checkUser.score;
+          }
+          Game.getUser();
+        };
+      };
+    }
+    checkScore();
   }
 
   newGame(images: string[]): void {
@@ -119,8 +141,8 @@ export class Game extends BaseComponent {
 
       this.counter++;
       if (this.counter >= this.cardsField.cards.length / 2) {
-        Game.getUser(this.countResult());
-        alert(`Congratulations! Your result is ${this.countResult()} points!`);
+        this.countResult();
+        alert(`Congratulations! You finished in ${this.countTime} seconds!`);
       }
     }
 

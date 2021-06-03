@@ -17,10 +17,12 @@ export default class StatisticsPage extends Page {
     const openRequest = iDB.open('testdb');
     openRequest.onupgradeneeded = () => {
       database = openRequest.result;
-      const store = database.createObjectStore('testCollection', { keyPath: 'id', autoIncrement: true });
+      const store = database.createObjectStore('testCollection', { keyPath: 'email' });
       store.createIndex('firstname', 'firstname');
       store.createIndex('lastname', 'lastname');
-      store.createIndex('email', 'email', { unique: true });
+      store.createIndex('email', 'email');
+      store.createIndex('score', 'score');
+      store.createIndex('avatar', 'avatar');
     };
 
     openRequest.onsuccess = () => {

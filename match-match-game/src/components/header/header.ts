@@ -99,15 +99,16 @@ export default class Header extends BaseComponent {
         avatar.src = <string>reader.result;
         avatar.classList.add('avatar-image');
         this.element.append(avatar);
+        user.avatar = image;
       };
       const iDB = window.indexedDB;
 
-      let database = null;
+      let database: IDBDatabase;
 
       const openRequest = iDB.open('testdb');
       openRequest.onupgradeneeded = () => {
         database = openRequest.result;
-        const store = database.createObjectStore('testCollection', { keyPath: 'id', autoIncrement: true });
+        const store = database.createObjectStore('testCollection', { keyPath: 'email' });
         store.createIndex('firstname', 'firstname');
         store.createIndex('lastname', 'lastname');
         store.createIndex('email', 'email');
@@ -119,12 +120,20 @@ export default class Header extends BaseComponent {
         database = openRequest.result;
         const transaction = database.transaction('testCollection', 'readwrite');
         const store = transaction.objectStore('testCollection');
-        store.add({
-          firstname: user.firstname, lastname: user.lastname, email: user.email, score: 0, avatar: image,
-        });
         const result = store.getAll();
+        function checkScore() {
+          const secondTransaction = database.transaction('testCollection', 'readwrite');
+          const secondStore = secondTransaction.objectStore('testCollection');
+          secondStore.put({
+            firstname: user.firstname, lastname: user.lastname, email: user.email, score: user.score, avatar: image,
+          });
+        }
         transaction.oncomplete = () => {
-          user.id = result.result.find((el) => el.email === user.email).id;
+          const checkUser = result.result.find((el) => el.email === user.email);
+          if (checkUser && user.email === checkUser.email) {
+            user.score = checkUser.score;
+            checkScore();
+          }
         };
       };
       playButton.innerText = 'start game';
