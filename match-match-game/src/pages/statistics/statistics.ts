@@ -29,32 +29,41 @@ export default class StatisticsPage extends Page {
       database = openRequest.result;
       const transaction = database.transaction('testCollection', 'readwrite');
       const store = transaction.objectStore('testCollection');
-      const result = store.getAll();
+      const result = store.index('score').openCursor(null, 'prev');
+      const arr: Array<any> = [];
+      result.onsuccess = () => {
+        const cursor = result.result;
+        if (cursor) {
+          arr.push(cursor.value);
+          cursor.continue();
+        }
+      };
       transaction.oncomplete = () => {
+        console.log(arr);
         function tableCreate() {
           const tbl = document.createElement('table');
           tbl.style.width = '100px';
           tbl.style.border = '1px solid black';
-          for (let i = 0; i < result.result.length; i++) {
+          for (let i = 0; i < arr.length && i < 10; i++) {
             const tr = tbl.insertRow();
             for (let j = 0; j < 5; j++) {
               const td = tr.insertCell();
               if (j === 0) {
                 const image = td.appendChild(document.createElement('img'));
-                image.src = result.result[i].avatar;
+                image.src = arr[i].avatar;
                 image.classList.add('avatar-image');
               }
               if (j === 1) {
-                td.appendChild(document.createTextNode(result.result[i].firstname));
+                td.appendChild(document.createTextNode(arr[i].firstname));
               }
               if (j === 2) {
-                td.appendChild(document.createTextNode(result.result[i].lastname));
+                td.appendChild(document.createTextNode(arr[i].lastname));
               }
               if (j === 3) {
-                td.appendChild(document.createTextNode(result.result[i].email));
+                td.appendChild(document.createTextNode(arr[i].email));
               }
               if (j === 4) {
-                td.appendChild(document.createTextNode(result.result[i].score));
+                td.appendChild(document.createTextNode(arr[i].score));
               }
               td.style.border = '1px solid black';
             }
