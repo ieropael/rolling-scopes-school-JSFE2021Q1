@@ -132,13 +132,14 @@ export default class Header extends BaseComponent {
       playButton.href = '#play';
     });
 
-    function validate(value: string) {
+    function validate(firstname: string, lastname: string, email: string) {
       const regExp = /^[^0-9][^(~!@#$%*&()_—+=|:;"'`<>,.?\\/\\^\s)]{1,30}$/;
-      return regExp.test(value);
+      const regExpEMail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return (regExp.test(firstname) && regExp.test(lastname) && regExpEMail.test(email));
     }
 
-    function check(value: string) {
-      if (!validate(value)) {
+    function check(firstname: string, lastname: string, email: string) {
+      if (!validate(firstname, lastname, email)) {
         registerButton?.setAttribute('disabled', 'true');
       } else {
         registerButton?.removeAttribute('disabled');
@@ -148,13 +149,13 @@ export default class Header extends BaseComponent {
     registerButton?.setAttribute('disabled', 'true');
     if (firstNameInput && lastNameInput && eMailInput && avatarInput) {
       firstNameInput.addEventListener('input', () => {
-        check(firstNameInput.value);
+        check(firstNameInput.value, lastNameInput.value, eMailInput.value);
       });
       lastNameInput.addEventListener('input', () => {
-        check(firstNameInput.value);
+        check(firstNameInput.value, lastNameInput.value, eMailInput.value);
       });
       eMailInput.addEventListener('input', () => {
-        check(firstNameInput.value);
+        check(firstNameInput.value, lastNameInput.value, eMailInput.value);
       });
     }
   }
