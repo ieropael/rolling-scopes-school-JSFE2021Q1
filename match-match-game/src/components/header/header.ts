@@ -133,6 +133,9 @@ export default class Header extends BaseComponent {
           if (checkUser && user.email === checkUser.email) {
             user.score = checkUser.score;
             checkScore();
+          } else {
+            user.score = 0;
+            checkScore();
           }
         };
       };
