@@ -7,7 +7,7 @@ import Page from '../../templates/page';
 export default class MainPage extends Page {
   static textObject = {
     MainContent: `
-    <div class="about-game">
+    <div class="about-game-page">
       <div class="about-game__content">
         <h2 class="how-to-play">How to play?</h2>
         <div class="register">

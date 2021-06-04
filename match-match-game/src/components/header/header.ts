@@ -7,14 +7,17 @@ import { Game } from '../game/game';
 const Buttons = [
   {
     id: PageIDs.AboutGame,
+    styles: ['button', 'about-game'],
     text: 'About Game',
   },
   {
     id: PageIDs.Settings,
+    styles: ['button', 'best-score'],
     text: 'Game Settings',
   },
   {
     id: PageIDs.Statistics,
+    styles: ['button', 'game-settings'],
     text: 'Best Score',
   },
 ];
@@ -26,11 +29,9 @@ export default class Header extends BaseComponent {
   renderPageButtons(): void {
     const pageButtons = document.createElement('div');
     pageButtons.classList.add('page-buttons');
-    const buttonIcons = ['button__about', 'button__score', 'button__settings'];
-    Buttons.forEach((button, i) => {
+    Buttons.forEach((button) => {
       const buttonHTML = document.createElement('a');
-      buttonHTML.classList.add('button');
-      buttonHTML.classList.add(buttonIcons[i]);
+      buttonHTML.classList.add(...button.styles);
       buttonHTML.href = `#${button.id}`;
       buttonHTML.innerText = button.text;
       pageButtons.append(buttonHTML);
@@ -143,7 +144,7 @@ export default class Header extends BaseComponent {
       };
       playButton.innerText = 'start game';
       playButton.removeEventListener('click', listener);
-      playButton.href = '#play';
+      playButton.href = '#play-game';
     });
 
     function validate(firstname: string, lastname: string, email: string) {

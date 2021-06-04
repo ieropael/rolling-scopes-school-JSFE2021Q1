@@ -53,15 +53,19 @@
   background-color: #1E88E5;
 }
 
-.button__about {
+.button.active {
+  background-color: #1E88E5;
+}
+
+.about-game {
   background-image: url('../../assets/icons/about-game-icon.svg');
 }
 
-.button__score {
+.best-score {
   background-image: url('../../assets/icons/best-score-icon.svg');
 }
 
-.button__settings {
+.game-settings {
   background-image: url('../../assets/icons/game-settings-icon.svg');
 }
 

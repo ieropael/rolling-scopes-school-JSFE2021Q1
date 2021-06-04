@@ -1,6 +1,6 @@
 export const enum PageIDs {
-  AboutGame = 'about',
-  Settings = 'settings',
-  Statistics = 'statistics',
-  Play = 'play',
+  AboutGame = 'about-game',
+  Settings = 'game-settings',
+  Statistics = 'best-score',
+  Play = 'play-game',
 }
