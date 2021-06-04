@@ -39,7 +39,6 @@ export default class StatisticsPage extends Page {
         }
       };
       transaction.oncomplete = () => {
-        console.log(arr);
         function tableCreate() {
           const tbl = document.createElement('table');
           tbl.style.width = '100px';
