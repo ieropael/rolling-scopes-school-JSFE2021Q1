@@ -103,7 +103,11 @@ export default class App {
 
   run(): void {
     App.container.append(this.header.render());
-    App.renderNewPage(window.location.hash.slice(1));
+    if (window.location.hash.slice(1)) {
+      App.renderNewPage(window.location.hash.slice(1));
+    } else {
+      App.renderNewPage('about-game');
+    }
     this.enableRouteChange();
   }
 }
