@@ -11,11 +11,11 @@ const Buttons = [
   },
   {
     id: PageIDs.Settings,
-    text: 'Settings Page',
+    text: 'Game Settings',
   },
   {
     id: PageIDs.Statistics,
-    text: 'Statistics Page',
+    text: 'Best Score',
   },
 ];
 export default class Header extends BaseComponent {
@@ -26,9 +26,11 @@ export default class Header extends BaseComponent {
   renderPageButtons(): void {
     const pageButtons = document.createElement('div');
     pageButtons.classList.add('page-buttons');
-    Buttons.forEach((button) => {
+    const buttonIcons = ['button__about', 'button__score', 'button__settings'];
+    Buttons.forEach((button, i) => {
       const buttonHTML = document.createElement('a');
       buttonHTML.classList.add('button');
+      buttonHTML.classList.add(buttonIcons[i]);
       buttonHTML.href = `#${button.id}`;
       buttonHTML.innerText = button.text;
       pageButtons.append(buttonHTML);
@@ -41,8 +43,8 @@ export default class Header extends BaseComponent {
     `;
     this.element.append(pageButtons);
     const playButton = document.createElement('a');
-    playButton.classList.add('play-button');
-    playButton.innerText = 'register';
+    playButton.classList.add('main-button');
+    playButton.innerText = 'register new player';
     this.element.append(playButton);
 
     const modal = document.createElement('div');
