@@ -1,15 +1,8 @@
-#app > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .about-game {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #E5E5E5;
-  height: 100vh;
 }
 
 .about-game__content {
@@ -27,7 +20,9 @@
   margin-bottom: 20px;
 }
 
-.register, .configure, .start {
+.register,
+.configure,
+.start {
   display: flex;
   justify-content: space-between;
 }
@@ -42,7 +37,9 @@
   margin-bottom: 16px;
 }
 
-.register__number {
+.register__number,
+.configure__number,
+.start__number {
   width: 40px;
   height: 40px;
   background-color: #2196F3;
@@ -76,20 +73,6 @@
   padding-top: 16px;
   padding-left: 16px;
   margin-bottom: 21px;
-}
-
-.configure__number {
-  width: 40px;
-  height: 40px;
-  background-color: #2196F3;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  line-height: 21px;
-  letter-spacing: 0.25px;
-  margin-right: 16px;
 }
 
 .configure__text {
