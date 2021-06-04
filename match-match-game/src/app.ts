@@ -103,7 +103,7 @@ export default class App {
 
   run(): void {
     App.container.append(this.header.render());
-    App.renderNewPage('about');
+    App.renderNewPage(window.location.hash.slice(1));
     this.enableRouteChange();
   }
 }
