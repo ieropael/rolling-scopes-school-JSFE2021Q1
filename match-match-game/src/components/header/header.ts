@@ -3,6 +3,7 @@ import { BaseComponent } from '../base-component';
 import { PageIDs } from '../../shared/page-ids';
 import { User } from '../../models/user';
 import { Game } from '../game/game';
+import { Modal } from '../modal/modal';
 
 const Buttons = [
   {
@@ -51,38 +52,19 @@ export default class Header extends BaseComponent {
     mainButton.innerText = 'register new player';
     this.element.append(mainButton);
 
-    const modal = document.createElement('div');
-    modal.classList.add('modal');
-    document.body.append(modal);
+    const modal = new Modal();
 
-    const modalContent = document.createElement('div');
-    modalContent.classList.add('modal__content');
-    modal.append(modalContent);
+    document.body.append(modal.renderModal());
 
-    modalContent.innerHTML = `
-      <form name="register">
-        <h3>Register new Player</h3>
-        <span>First name *</span>
-        <input type="text" class="firstname" maxlength="30" required></input>
-        <span>Last name *</span>
-        <input type="text" class="lastname" maxlength="30" required></input>
-        <span>E-Mail *</span>
-        <input type="text" class="e-mail" maxlength="30" required></input>
-        <input type="file" class="avatar"></input>
-        <button class="register-button" type="button">Submit</button>
-      </form>
-    `;
-
-    function listener() {
-      modal.style.display = 'flex';
+    function showModal(): void {
+      modal.element.style.display = 'flex';
     }
 
-    mainButton.addEventListener('click', listener);
-    // playButton.href = '#play';
+    mainButton.addEventListener('click', showModal);
 
     window.addEventListener('click', (event) => {
-      if (event.target === modal) {
-        modal.style.display = 'none';
+      if (event.target === modal.element) {
+        modal.element.style.display = 'none';
       }
     });
 
@@ -145,8 +127,9 @@ export default class Header extends BaseComponent {
           }
         };
       };
+
       mainButton.innerText = 'start game';
-      mainButton.removeEventListener('click', listener);
+      mainButton.removeEventListener('click', showModal);
       mainButton.href = '#play-game';
     });
 
