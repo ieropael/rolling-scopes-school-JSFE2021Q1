@@ -11,22 +11,30 @@ const Buttons = [
     text: 'About Game',
   },
   {
-    id: PageIDs.Settings,
+    id: PageIDs.BestScore,
     styles: ['button', 'best-score'],
-    text: 'Game Settings',
-  },
-  {
-    id: PageIDs.Statistics,
-    styles: ['button', 'game-settings'],
     text: 'Best Score',
   },
+  {
+    id: PageIDs.GameSettings,
+    styles: ['button', 'game-settings'],
+    text: 'Game Settings',
+  },
 ];
+
 export default class Header extends BaseComponent {
   constructor() {
     super('header', ['header']);
   }
 
-  renderPageButtons(): void {
+  renderHeader(): void {
+    this.element.innerHTML = `
+      <div class="logo">
+        <div class="logo-top">match</div>
+        <div class="logo-bottom">match</div>
+      </div>
+    `;
+
     const pageButtons = document.createElement('div');
     pageButtons.classList.add('page-buttons');
     Buttons.forEach((button) => {
@@ -36,17 +44,12 @@ export default class Header extends BaseComponent {
       buttonHTML.innerText = button.text;
       pageButtons.append(buttonHTML);
     });
-    this.element.innerHTML = `
-    <div class="logo">
-      <div class="logo-top">match</div>
-      <div class="logo-bottom">match</div>
-    </div>
-    `;
     this.element.append(pageButtons);
-    const playButton = document.createElement('a');
-    playButton.classList.add('main-button');
-    playButton.innerText = 'register new player';
-    this.element.append(playButton);
+
+    const mainButton = document.createElement('a');
+    mainButton.classList.add('main-button');
+    mainButton.innerText = 'register new player';
+    this.element.append(mainButton);
 
     const modal = document.createElement('div');
     modal.classList.add('modal');
@@ -74,7 +77,7 @@ export default class Header extends BaseComponent {
       modal.style.display = 'flex';
     }
 
-    playButton.addEventListener('click', listener);
+    mainButton.addEventListener('click', listener);
     // playButton.href = '#play';
 
     window.addEventListener('click', (event) => {
@@ -142,9 +145,9 @@ export default class Header extends BaseComponent {
           }
         };
       };
-      playButton.innerText = 'start game';
-      playButton.removeEventListener('click', listener);
-      playButton.href = '#play-game';
+      mainButton.innerText = 'start game';
+      mainButton.removeEventListener('click', listener);
+      mainButton.href = '#play-game';
     });
 
     function validate(firstname: string, lastname: string, email: string) {
@@ -176,7 +179,7 @@ export default class Header extends BaseComponent {
   }
 
   render(): HTMLElement {
-    this.renderPageButtons();
+    this.renderHeader();
     return this.element;
   }
 }

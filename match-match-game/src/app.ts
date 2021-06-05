@@ -24,11 +24,11 @@ export default class App {
 
     if (idPage === PageIDs.AboutGame) {
       page = new MainPage(idPage);
-    } else if (idPage === PageIDs.Settings) {
+    } else if (idPage === PageIDs.GameSettings) {
       page = new SettingsPage(idPage);
-    } else if (idPage === PageIDs.Statistics) {
+    } else if (idPage === PageIDs.BestScore) {
       page = new StatisticsPage(idPage);
-    } else if (idPage === PageIDs.Play) {
+    } else if (idPage === PageIDs.PlayGame) {
       new Play(document.body).start();
     }
 
@@ -93,6 +93,13 @@ export default class App {
   private enableRouteChange() {
     this.window.addEventListener('hashchange', () => {
       const hash = window.location.hash.slice(1);
+      const pageButtons = document.querySelectorAll('.button');
+      pageButtons.forEach((button) => {
+        button.classList.remove('active');
+        if (button.classList.contains(hash)) {
+          button.classList.add('active');
+        }
+      });
       App.renderNewPage(hash);
     });
   }
