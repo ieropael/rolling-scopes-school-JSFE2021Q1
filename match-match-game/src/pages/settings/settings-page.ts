@@ -18,9 +18,9 @@ export default class SettingsPage extends Page {
   };
 
   render(): HTMLElement {
-    const title = this.createContent(SettingsPage.textObject.MainContent);
+    const content = this.createContent(SettingsPage.textObject.MainContent);
     this.container.classList.add('settings-container');
-    this.container.append(title);
+    this.container.append(content);
     return this.container;
   }
 }
