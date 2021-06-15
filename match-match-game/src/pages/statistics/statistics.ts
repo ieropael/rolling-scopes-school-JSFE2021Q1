@@ -1,5 +1,8 @@
 import Page from '../../templates/page';
 
+const SCORE_SIZE = 10;
+const FIELDS_AMOUNT = 5;
+
 export default class StatisticsPage extends Page {
   static textObject = {
     MainContent: 'Statistics Page',
@@ -30,7 +33,7 @@ export default class StatisticsPage extends Page {
       const transaction = database.transaction('testCollection', 'readwrite');
       const store = transaction.objectStore('testCollection');
       const result = store.index('score').openCursor(null, 'prev');
-      const arr: Array<any> = [];
+      const arr: Array<Record<string, string>> = [];
       result.onsuccess = () => {
         const cursor = result.result;
         if (cursor) {
@@ -40,29 +43,32 @@ export default class StatisticsPage extends Page {
       };
       transaction.oncomplete = () => {
         function tableCreate() {
-          const tbl = document.createElement('table');
-          tbl.style.width = '100px';
-          tbl.style.border = '1px solid black';
-          for (let i = 0; i < arr.length && i < 10; i++) {
-            const tr = tbl.insertRow();
-            for (let j = 0; j < 5; j++) {
+          const table = document.createElement('table');
+
+          for (let i = 0; i < arr.length && i < SCORE_SIZE; i++) {
+            const tr = table.insertRow();
+            for (let j = 0; j < FIELDS_AMOUNT; j++) {
               const td = tr.insertCell();
-              if (j === 0) {
-                const image = td.appendChild(document.createElement('img'));
-                image.src = arr[i].avatar;
-                image.classList.add('avatar-image');
-              }
-              if (j === 1) {
-                td.appendChild(document.createTextNode(arr[i].firstname));
-              }
-              if (j === 2) {
-                td.appendChild(document.createTextNode(arr[i].lastname));
-              }
-              if (j === 3) {
-                td.appendChild(document.createTextNode(arr[i].email));
-              }
-              if (j === 4) {
-                td.appendChild(document.createTextNode(arr[i].score));
+              const avatar = td.appendChild(document.createElement('img'));
+              switch (j) {
+                case 0:
+                  avatar.src = arr[i].avatar;
+                  avatar.classList.add('avatar-image');
+                  break;
+                case 1:
+                  td.appendChild(document.createTextNode(arr[i].firstname));
+                  break;
+                case 2:
+                  td.appendChild(document.createTextNode(arr[i].lastname));
+                  break;
+                case 3:
+                  td.appendChild(document.createTextNode(arr[i].email));
+                  break;
+                case 4:
+                  td.appendChild(document.createTextNode(arr[i].score));
+                  break;
+                default:
+                  break;
               }
               td.style.border = '1px solid black';
             }
@@ -70,7 +76,7 @@ export default class StatisticsPage extends Page {
 
           const stats = document.querySelector('.statistic');
           if (stats) {
-            stats.appendChild(tbl);
+            stats.appendChild(table);
           }
         }
         tableCreate();
