@@ -50,7 +50,6 @@ module.exports = ({develop}) => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      // title: 'match-match-game',
       template: './src/index.html'
     }),
     new MiniCssExtractPlugin({
@@ -65,4 +64,7 @@ module.exports = ({develop}) => ({
     ...esLintPlugin(develop),
   ],
   ...devServer(develop),
+  experiments: {
+    topLevelAwait: true,
+  },
 });

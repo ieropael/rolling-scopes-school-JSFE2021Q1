@@ -1,3 +1,9 @@
-const image = document.createElement('img');
-image.src = './f9.jpg';
-document.body.append(image);
+// import './style.css';
+// import { render, listen, updateStateGarage } from './ui';
+
+// render();
+// await updateStateGarage();
+// listen();
+import Store from './store';
+
+console.log(Store.store);
