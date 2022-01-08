@@ -1,0 +1,96 @@
+.header {
+  padding-left: 24px;
+  padding-right: 20px;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 1.25px;
+  background-color: #2196F3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
+  color: #fff;
+}
+
+.logo {
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+.logo-top,
+.logo-bottom {
+  width: 80px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo-bottom {
+  background-color: #fff;
+  color: #2196F3;
+}
+
+.page-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 152px;
+}
+
+.button {
+  width: 96px;
+  height: 100%;
+  padding-top: 40px;
+  text-decoration: none;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center 12px;
+  color: #fff;
+}
+
+.button:hover {
+  background-color: #1E88E5;
+}
+
+.button.active {
+  background-color: #1E88E5;
+}
+
+.about-game {
+  background-image: url('../../assets/icons/about-game-icon.svg');
+}
+
+.best-score {
+  background-image: url('../../assets/icons/best-score-icon.svg');
+}
+
+.game-settings {
+  background-image: url('../../assets/icons/game-settings-icon.svg');
+}
+
+.main-button {
+  margin-top: 12px;
+  margin-left: auto;
+  width: 207px;
+  height: 36px;
+  padding: 10px 16px;
+  background-color: #F2F9FE;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2),
+              0px 1px 18px rgba(0, 0, 0, 0.12),
+              0px 6px 10px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  color: #2196F3;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 1.25px;
+  cursor: pointer;
+}
+
+.main-button:hover {
+  background-color: #1E88E5;
+  color: #fff;
+}

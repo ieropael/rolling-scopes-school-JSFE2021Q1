@@ -1,0 +1,27 @@
+{
+  "name": "match-match-game",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack serve --env develop",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.0",
+    "css-loader": "^5.2.5",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-webpack-plugin": "^2.5.4",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
